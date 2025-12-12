@@ -1,0 +1,27 @@
+{
+  "name": "postali-child",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "each-async": "^2.0.0",
+    "indent-string": "^5.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-concat-css": "^0.3.2",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "description": ""
+}

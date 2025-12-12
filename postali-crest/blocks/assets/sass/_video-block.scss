@@ -1,0 +1,118 @@
+.video-block {
+    background: $white;
+    padding: 20px;
+    box-shadow: 0px 0px 24px #00000029;
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video-block-thumbnail {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+
+        &:before {
+            content: "\e90e";
+            font-family: $icomoon;
+            color: $white;
+            font-size: 100px;
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            z-index: 4;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $blk;
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .responsive-iframe {
+        position: relative;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .video-block-copy {
+        p {
+            margin-bottom: 15px !important;
+        }
+    }
+
+    .video-block-link {
+        display: flex;
+        align-items: center;
+        margin: 50px 0 15px 0;
+        padding-right: 40px;
+        position: relative;
+        width: fit-content;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+
+        &:hover {
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+
+        &:after {
+            content: "\e908";
+            font-family: $icomoon;
+            background: $blk;
+            border-radius: 50%;
+            font-size: 18px;
+            height: 18px;
+            width: 18px;
+            padding: 5px;
+            color: $white;
+            position: absolute;
+            top: unset;
+            right: 0;
+            transition: $trans;
+        }
+
+        p {
+            color: $blk !important;
+            text-transform: uppercase !important;
+            font-weight: $bold !important;
+            letter-spacing: 2.4px !important;
+            margin: 0 !important;
+            cursor: pointer;
+        }
+    }
+}

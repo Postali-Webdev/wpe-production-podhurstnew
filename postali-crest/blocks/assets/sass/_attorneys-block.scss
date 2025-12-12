@@ -1,0 +1,180 @@
+.attorney-block {
+    &.attorneys-bio {
+        .columns {
+            align-items: normal;
+
+            .column-33 {
+                position: relative;
+                background: $white;
+                margin: .5%;
+                width: 32.3%;
+                border-radius: 0 0 10px 10px;
+                
+                @include respond(tab-land) {
+                    width:48%;
+                    margin:1%;
+                }
+
+                @include respond(tab-port) {
+                    width:100%;
+                    margin:10px 0;
+                }
+                
+                h3 {
+                    color:$blk;
+                }
+            
+                .attorney-img {
+                    position: relative;
+        
+                    img {
+                        height: 450px;
+                        width: 100%;
+                        -o-object-fit: cover;
+                        object-fit: cover;
+                        -o-object-position: center;
+                        object-position: center;
+
+                        @include respond(tab-port) {
+                            height:550px;
+                        }
+
+                        @include respond(phone) {
+                            height:450px;
+                        }
+                    }
+                }
+        
+                .attorney-details {
+                    padding: 30px 30px 70px;
+                    box-sizing: border-box;
+
+                    h3 {
+                        color:$blk;
+                    }
+
+                    p {
+                        color:$blk;
+
+                        &.title {
+                            color:$blk;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+
+                a.btn {
+                    position: absolute;
+                    bottom:30px;
+                    left: 30px;
+                    background:none;
+                    color:#70C1B3;
+                    text-transform: uppercase;
+                    padding: 15px 0 5px;
+                    font-size: 17px;
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        font-size: 15px;
+                        margin-left: 10px;
+                        transition: $trans;
+                    }
+
+                    &:hover {
+                        color:$blk;
+
+                        span {
+                            margin-left: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.attorneys-nobio {
+        background-color: $blk;
+        padding: 20px;
+        h2, p {
+            color:$white;
+        }
+    
+        .column-25 {   
+            position: relative;
+    
+            @include respond(tab-land) {
+                width: 31.3%;
+                margin:1%;
+            }
+    
+            @include respond(tab-port) {
+                width: 48%;
+                margin:1%;
+            }
+    
+            @include respond(phone) {
+                width: 100%;
+                margin:0 10px;
+            }
+             
+            h3 {
+                color:$white;
+            }
+        
+            .attorney-img {
+                position: relative;
+    
+                img {
+                    height: 100%;
+                    width: 100%;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    opacity: .5;
+                    transition:$trans;
+                }
+    
+                .arrow {
+                    background-color:$white;
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    bottom:15px;
+                    right: 15px;
+                    z-index: 2;
+                    transition:$trans;
+                    
+                    &::after {
+                        position: relative;
+                        content:"\e908";
+                        font-family: $icomoon;
+                        color:$blk;
+                        align-items: center;
+                        justify-content: center;
+                        display:flex;
+                        width: 40px;
+                        height: 40px;
+                        rotate:-45deg;
+                        font-size: 24px;
+                    }
+                }
+    
+                &:hover {
+                    .arrow {
+                        background-color: $white;
+                    }
+                }
+            }
+    
+            &:hover {
+                .attorney-img {
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

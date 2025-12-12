@@ -1,0 +1,159 @@
+.link-block {
+    
+    h2 {
+        margin:0 auto 50px;
+        text-align: center;
+    }
+    
+    ul.links{
+        -moz-column-gap: 15px;
+             column-gap: 15px;
+        -moz-column-count: 2;
+             column-count: 2;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+
+        @include respond(tab-port) {
+            -moz-column-count: 1;
+                 column-count: 1;
+            -moz-column-gap: 0;
+                 column-gap: 0;
+        }
+
+        li {
+            margin: 0;
+            margin-bottom: 15px;
+            position: relative;
+
+            &::after {
+                content: "\e90d";
+                font-family: $icomoon;
+                position: absolute;
+                right: 25px;
+                font-size: 22px;
+                top: 20px;
+                color:$white;
+            }
+
+            a {
+                text-decoration: none;
+                color:$white;
+                font-size: 20px;
+                font-family: $sans;
+                display: block;
+                padding: 20px 65px 20px 40px;
+                border-radius: 15px;
+                background: $blk;
+
+                &:hover {
+                    background:$blk;
+                }
+            }
+        }
+    }
+
+    &.links-full {
+        @include respond(phone) {
+            margin-bottom: 50px;
+        }
+        h2 {
+            margin:0 auto 25px;
+        }
+
+        p.subhead {
+            max-width: 50%;
+            margin:0 auto 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            .link-box {
+                padding: 0;
+                box-sizing: border-box;
+                transition: $trans;
+                position: relative;
+                margin-bottom: 10px;
+                border-bottom: solid 2px $grey;
+                position: relative;
+                text-decoration: none;
+                &:hover {
+                    &>h3 {
+                        text-decoration: none !important;
+                    }
+                }
+                img {
+                    max-width: 100px;
+                }
+
+                h3 {
+                    margin-bottom: 20px;
+                    padding-right: 35px;
+                    color: $blue;
+                    font-size: 2.5rem;
+                    font-family: $serif;
+                    font-weight: $normal;
+                    text-decoration: underline;
+                }
+
+                .icon-crest-arrow-right {
+                    height: 35px;
+                    width: 35px;
+                    margin-left: 15px;
+                    color: $white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: $trans;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    &:before {
+                        font-family: $icomoon;
+                        content: "\e87a";
+                        color: $blue;
+                        font-size: 35px;
+                    }
+                }
+            }
+            .slick-dots {
+                margin-top: 0px;
+                margin-bottom: 0 !important;
+                bottom: -30px;
+
+                li {
+                    margin: 0 10px;
+
+                    button:before {
+                        content: "";
+                        border: solid 2px $dkblue;
+                        border-radius: 50%;
+                        width: 18px;
+                        height: 18px;
+                        opacity: 1;
+                    }
+
+                    &.slick-active {
+                        button:before {
+                            background: $dkblue;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn {
+            margin: 0 auto;
+            display: flex;
+        }
+    }
+}

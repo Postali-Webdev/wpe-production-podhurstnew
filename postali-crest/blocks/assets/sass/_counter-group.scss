@@ -1,0 +1,106 @@
+#counter-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    .slick-arrow {
+        top: unset !important;
+        bottom: -70px !important;
+        &.slick-next {
+            right: 0 !important;
+        }
+        &.slick-prev {
+            right: 8% !important;
+            @media screen and (max-width: 400px) {
+                right: 12% !important;
+            }
+        }
+    }
+    &.counter-group {
+        &_2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &_3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &_4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &_5 {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            @include respond(desktop) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+        &_6 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @include respond(tab-land) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    @include respond(tab-port) {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .counter {
+        background: $white;
+        padding: 25px 30px;
+        @include respond(tab-port) {
+            margin: 0 10px !important;
+            height: 100px;
+        }
+        @media screen and (max-width: 400px) {
+            padding: 20px !important;
+            margin: 0 5px !important;
+        }
+        .counter-number {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            p, span {
+                margin: 0 !important;
+                font-family: $sans !important;
+                font-size: 35px !important;
+                font-weight: $bold;
+                color: $red;
+                @include respond(desktop) {
+                    font-size: 25px !important;
+                }
+                @include respond(phone) {
+                    font-size: 18px !important;
+                }
+                &.lg-title {
+                    @include respond(phone) {
+                        font-size: 25px !important;
+                    }
+                }
+            }
+        }
+        .counter-copy {
+            p {
+                &.md-title {
+                    font-size: 18px !important;
+                    font-weight: $bold;
+                    margin-bottom: 5px !important;
+                    line-height: 130% !important;
+                }
+            }
+        }
+    }
+    &.dark-bg {
+        .counter {
+            .counter-number, .counter-copy {
+                border-color: $white;
+                p,
+                span {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

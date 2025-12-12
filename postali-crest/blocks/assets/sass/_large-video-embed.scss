@@ -1,0 +1,96 @@
+#video-embed-wrapper {
+    margin-bottom: 30px;
+    h3 {
+        margin: 30px auto !important;
+        width: 60%;
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+    .video-wrapper {
+        position: relative;
+        width: 60%;
+        height: 100%;
+        margin-bottom: 20px;
+        padding-top: 33.75%;
+        margin: 0 auto;
+        @include respond(tab-port) {
+            width: 100%;
+            padding-top: 56.25%;
+        }
+    }
+
+    .video-block-thumbnail {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+
+        &:before {
+            content: "\e90e";
+            font-family: $icomoon;
+            color: $white;
+            font-size: 100px;
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            z-index: 4;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $blk;
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        @include respond(tab-port) {
+            width: 100%;
+            padding-top: 56.25%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .video-copy {
+        width: calc(60% - 100px);
+        margin: 0 auto;
+        background: $white;
+        padding: 30px 50px;
+        @include respond(tab-port) {
+            padding: 30px;
+            width: calc(100% - 60px);
+        }
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

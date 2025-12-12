@@ -1,0 +1,338 @@
+
+// keyframes for desktop sub-nav
+
+@keyframes fadein {
+    0% { opacity:0; top:90px; }
+    100% { opacity:1; top:53px; }
+}
+
+@-webkit-keyframes fadein {
+    0% { opacity:0; top:90px; }
+    100% { opacity:1; top:53px; }
+}
+
+.marketing-banner {
+    width: 100%;
+    background: $dkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    padding: 5px 0;
+    &.secondary-banner {
+        background: $orange;
+    }
+    a {
+        color: $white;
+        font-family: $serif;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 0 50px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            text-decoration: underline;
+        }
+        &:after {
+            content: "\e87a";
+            position: absolute;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            font-family: $icomoon;
+            color: $white;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+header {    
+    #header-top {
+        background: $white;
+        border: solid 1px $blk;
+        width: calc(100% - 100px);
+        margin: 0 auto;
+        @include respond(desktop-lg) {
+            width: calc(100% - 75px);
+        }
+        @include respond(desktop) {
+            width: calc(100% - 10px);
+            padding: 0;
+        }
+        &_left {
+            @include respond(desktop-lg) {
+                width: 27%;
+            }
+            @include respond(desktop) {
+                width: 20%;
+            }
+        }
+        &_right {
+            &_menu {   
+                .menu { //top level menu
+                    list-style-type: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding-bottom: 0;
+                    @include respond(desktop-lg) {
+                        gap: 15px;
+                    }
+                    .accordion-toggle {
+                        display: none;
+                    }
+                
+                    li {
+                        @include nav-search-desktop;
+                        display: flex;
+                        align-items: center;
+                        margin-left: 0px;
+                        position: relative;
+                        height: auto;
+                        padding-right: 18px;
+                        @include respond(desktop) {
+                            padding-right: 10px;
+                        }
+                        &:not(.menu-item-search) {
+                            &.disable {
+                                opacity: 0.5;
+                                pointer-events: none;
+                            }
+                        }
+                        &.nav-btn {
+                            background: $blue;
+                            padding: 0;
+                            position: relative;
+                            &:before {
+                                display: none;
+                            }
+                            &:after {
+                                content: "\e90b";
+                                font-family: $icomoon;
+                                color: $white;
+                                position: absolute;
+                                left: 15px;
+                                top: 50%;
+                                transform: translateY(-50%) rotate(108deg);
+                                width: 20px;
+                                height: 20px;
+                                font-size: 20px;
+                                pointer-events: none;
+                                z-index: 2;
+                                @include respond(desktop-lg) {
+                                    left: 8px;
+                                }
+                            }
+                            a {
+                                display: block;
+                                position: relative;
+                                color: $white;
+                                padding: 14px 20px 14px 45px;
+                                overflow: hidden;
+                                @include respond(desktop-lg) {
+                                    padding: 14px 20px 14px 30px;
+                                }
+                                & > span {
+                                    position: relative;
+                                    z-index: 2;
+                                    font-family: $phone-btn-font !important;
+                                }
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: -120%;
+                                    height: 100%;
+                                    width: 120%;
+                                    background: $hoverblue;
+                                    -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+                                            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+                                    transition: $trans;
+                                    z-index: 1;
+                                    pointer-events: none;
+                                }
+                            }
+                            &:hover {
+                                a {
+                                    &:after {
+                                        left: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &.menu-item-has-children {
+                            &:after {
+                                content: "\e905";
+                                font-family: $icomoon;
+                                color: $blk;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 12px;
+                                height: 12px;
+                                font-size: 12px;
+                                @include respond(desktop) {
+                                    right: -5px;
+                                }
+                                @include respond(tab-land) {
+                                    display: none;   
+                                }
+                            }
+                        }
+                        &:before {
+                            content: "";
+                            width: 0px;
+                            height: 3px;
+                            background: $blue;
+                            transition: $trans;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                            @include respond(tab-port) {
+                                display: none;
+                            }
+                        }
+                        &.current_page_ancestor, &.current-menu-item {
+                            @include respond(tab-port) {
+                                & > a {
+                                    text-decoration: underline !important;
+                                }
+                            }
+                            &:before {
+                                width: calc(100% - 18px);
+                            }
+                        }
+                        a {
+                            color: $blk;
+                            font-family: $serif;
+                            text-transform: uppercase;
+                            font-size: 1.6rem;
+                            white-space: nowrap;
+                            @include respond(desktop-lg) {
+                                font-size: 1.5rem;
+                            }
+                        }
+                        .sub-menu { //second level menu
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin-left: 0;
+                            background: $white;
+                            width: 100%;
+                            min-width: 384px;
+                            padding: 20px 0;
+                            flex-direction: column;
+                            gap: 0px;
+                            background: $dkblue;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                top: -35px;
+                                left: 0;
+                                height: 40px;
+                                width: 100%;
+                            }
+                            li {
+                                padding: 15px 27px 15px 20px;
+                                margin: 0;
+                                transition: $trans;
+                                @media screen and (min-width: 1025px) {
+                                    &:hover {
+                                        background: $blue;
+                                        &.menu-item-has-children {
+                                            &:after {
+                                                color: $white;
+                                            }
+                                        }
+                                        a {
+                                            color: $white;
+                                        }
+                                        .sub-menu {
+                                            display: flex;
+                                        }
+                                    }
+                                }
+                                &.menu-item-has-children {
+                                    &:after {
+                                        content: "\e87a";
+                                        right: 10px;
+                                        top: 15px;
+                                        color: $white;
+                                        width: 20px;
+                                        height: 20px;
+                                        font-size: 20px;
+                                    }
+                                }
+                                &:before {
+                                    display: none;
+                                }
+                                &.current_page_ancestor, &.current-menu-item {
+                                    & > a {
+                                        text-decoration: underline !important;
+                                    }
+                                }
+                                a {
+                                    color: $white;
+                                    font-family: $sans;
+                                    font-weight: $medium;
+                                }
+                                .sub-menu { //third level menu
+                                    display: none;
+                                    flex-direction: column;
+                                    position: absolute;
+                                    margin-left: 100%;
+                                    background: $blue;
+                                    @media screen and (min-width: 1025px) {
+                                        top: -20px !important;
+                                    }
+                                    li {
+                                        &:hover {
+                                            a {
+                                                color: $white;
+                                                text-decoration: underline !important;
+                                                -webkit-text-decoration-color: $white;
+                                                        text-decoration-color: $white;
+                                            }
+                                        }
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @media screen and (min-width: 1025px) {
+                            &:hover,
+                            >a:focus,
+                            >a:focus-visible {
+                                &:before {
+                                    width: 100%;
+                                }
+                    
+                                .sub-menu {
+                                    display: flex;
+                                    z-index: 0;
+                                    -webkit-animation: .3s ease 0s normal forwards 1 fadein;
+                                    animation: .3s ease 0s normal forwards 1 fadein;
+                                }
+                            }   
+                            &:not(.menu-item-has-children) {
+                                &:hover,
+                                >a:focus,
+                                >a:focus-visible {
+                                    &:before {
+                                        width: calc(100% - 18px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

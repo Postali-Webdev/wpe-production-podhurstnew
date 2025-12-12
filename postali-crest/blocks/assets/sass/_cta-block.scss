@@ -1,0 +1,174 @@
+.cta-block {
+    background: $white;
+    padding: 80px;
+    @include respond(tab-port) {
+        padding: 50px;
+    }
+    @include respond(phone) {
+        padding: 50px 30px;
+    }
+    &#slim { 
+        .columns {
+            align-items: flex-end;
+
+            .column-75 {
+                h2 {
+                    color:$blk;
+                    line-height: 100%;
+                }
+
+                @include respond(tab-land) {
+                    width: 100%;
+                }
+            }
+        
+            .column-25 {
+                justify-content: flex-end;
+
+                @include respond(tab-land) {
+                    width: 100%;
+                    margin-top: 30px;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    &#full {
+        .container {
+            .columns {    
+                .column-75 {
+                    padding:70px 120px;
+                    background:$white;
+                    border-radius: 10px;
+
+                    @include respond(tab-land) {
+                        width: 100%;
+                    }
+
+                    @include respond(tab-port) {
+                        padding:40px 80px
+                    }
+
+                    @include respond(phone) {
+                        padding: 50px;
+                    }
+
+                    h2 {
+                        color:$blk;
+                        line-height: 120%;
+                    }
+
+                    .sub-headline {
+                        font-size: 22px;
+                        font-weight: bold;
+                        color:$blk;
+                    }
+                }
+            }
+        }
+    }
+
+    &#split {
+        .container {
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding:0;
+
+            .columns {
+                align-items: normal;
+
+                .column-66 {
+                    width:66.6%;
+                    padding: 7%;
+                    background:$blk;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @include respond(tab-port) {
+                        width: 100%;
+                    }
+
+                    .pre-headline {
+                        color:$white;
+                    }
+
+                    h2 {
+                        color:$white;
+                    }
+                }
+    
+                .column-33 {
+                    width:33.4%;
+                    padding: 7%;
+                    background:#70C1B3;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @include respond(tab-port) {
+                        width: 100%;
+                    }
+
+                    p {
+                        font-size: 22px;
+                        line-height: 140%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cta-block-split-image {
+    .columns {
+        align-items: stretch;
+        .column-50 {
+            &:first-of-type {
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            &:last-of-type {
+                .cta-wrapper {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                }
+                a {
+                    font-weight: $light;
+                }
+            }
+        }
+    }
+}
+
+.remove-padding {
+    .cta-block-split-image {
+        .column-50 {
+            &:last-of-type {
+                padding: 180px 0 !important;
+            }
+        }
+    }
+}
+
+.full-width {
+    .cta-block-split-image {
+        .column-50 {
+            &:last-of-type {
+                padding-right: 100px !important;
+                @include respond(desktop-lg) {
+                    padding-right: 60px !important;
+                }
+                @include respond(tab-port) {
+                    padding: 60px 30px !important;
+                }
+            }
+        }
+    }
+}

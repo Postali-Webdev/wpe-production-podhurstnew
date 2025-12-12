@@ -1,0 +1,15 @@
+{
+  "name": "acf/columns",
+  "title": "Crest Columns Block",
+  "description": "A custom columns layout block that uses ACF fields.",
+  "category": "postali-blocks",
+  "icon": "<svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='SVGRepo_bgCarrier' stroke-width='0'></g><g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g><g id='SVGRepo_iconCarrier'> <path d='M2 5C2 3.34315 3.34315 2 5 2H11V22H5C3.34315 22 2 20.6569 2 19V5Z' fill='#000000'></path> <path d='M13 22H19C20.6569 22 22 20.6569 22 19V5C22 3.34315 20.6569 2 19 2H13V22Z' fill='#000000'></path> </g></svg>",
+  "keywords": ["columns"],
+  "acf": {
+    "mode": "columns",
+    "renderTemplate": "columns.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

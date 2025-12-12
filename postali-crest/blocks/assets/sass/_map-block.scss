@@ -1,0 +1,260 @@
+.map-block {
+    margin: 60px 0;
+    &#map-left {
+        background: $white;
+        .columns {
+            align-items: normal;
+            background:$white;
+            border-radius: 10px;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            @include respond(desktop-lg) {
+                flex-direction: column;
+            }
+            @include respond(phone) {
+                padding:20px;
+            }
+
+            @include respond(tab-port) {
+                flex-wrap: wrap;
+            }
+
+            .column-50 {
+                flex-direction: column;
+                justify-content: center;
+                @include respond(desktop-lg) {
+                    width: 100%;
+                }
+                @include respond(tab-port) {
+                    width: 100%;
+                    margin-right: 0;
+                    // margin-bottom: 50px;
+                }
+
+                @include respond(phone) {
+                    min-width: auto;
+                }
+                
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 300px;
+                }
+                p, li, a {
+                    color: $dkblue;
+                }
+                p {
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+                h2, h3 {
+                    color: $blue;
+                    font-size: 2.2rem;
+                    font-weight: $normal;
+                    letter-spacing: 2.7px;
+                    font-family: $sans !important;
+                    margin-bottom: 20px !important;
+                }
+                &:first-of-type {
+                    width: 50%;
+                    @include respond(desktop-lg) {
+                        width: 100%;
+                    }
+                }
+                &:last-of-type {
+                    padding: 50px 40px;
+                    width: 50% !important;
+                    @include respond(desktop-lg) {
+                        width: 100% !important;
+                        padding: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    &#map-slim {
+        .columns {
+            padding: 0;
+            align-items: normal;
+            width: 80%;
+            background:$white;
+            margin:0 auto;
+
+            @include respond(tab-land) {
+                width: 100%;
+            }
+
+            .column-50 {
+                width: 50%;
+
+                @include respond(tab-port) {
+                    width: 100%;
+                }
+
+                &.address {
+                    padding: 40px;
+
+                    p.directions {
+                        margin-bottom: 0;
+                        
+                        a {
+                            color:inherit;
+                            text-decoration: underline;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+
+                    @include respond(tab-land) {
+                        height:250px;
+                    }
+                }
+            }
+        }
+    }
+
+    &#map-right {
+        .columns {
+            align-items: normal;
+            
+            .column-66 {
+                width:55%;
+                flex-direction: column;
+
+                @include respond(tab-port) {
+                    width:100%;
+                }
+
+                p.subhead {
+                    color:$blk;
+                    font-weight: bold;
+                    font-size: 22px;
+                    margin-top: 10px;
+                }
+
+                .contact-blocks {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+
+                    @include respond(phone) {
+                        flex-wrap: wrap;
+                    }
+
+                    div {
+                        margin-left: 30px;
+                        position: relative;
+                        
+                        p {
+                            margin-bottom: 0;
+                        }
+
+                        &.phone-block {
+                            margin-right: 25%;
+
+                            @include respond(phone) {
+                                width:100%;
+                                margin-bottom: 20px;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                content: "\e90b";
+                                font-family: $icomoon;
+                                color: $blk;
+                                left: -30px;
+                                font-size: 20px;
+                                top:3px
+                            }
+                        }
+
+                        &.address-block {
+                            @include respond(phone) {
+                                width:100%;
+                                margin-bottom: 30px;
+                            }
+                            
+                            &::before {
+                                position: absolute;
+                                content: "\e90c";
+                                font-family: $icomoon;
+                                color: $blk;
+                                left: -30px;
+                                font-size: 24px;
+                                top:1px
+                            }
+                        }
+                    }
+                }
+            }
+
+            .column-33 {
+                width:40%;
+
+                @include respond(tab-port) {
+                    width:100%;
+                }
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+
+                    @include respond(tab-land) {
+                        height:250px;
+                    }
+                }
+            }
+        }
+    }
+    &#map-full-split {
+        margin: 0 !important;
+        .columns {
+            align-items: stretch;
+            .column-50 {
+                &:first-of-type {
+                    iframe {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        position: relative;
+                        top: 30px;
+                        @include respond(phone) {
+                            top: 60px;
+                        }
+                    }
+                    @include respond(tab-port) {
+                        min-height: 400px;
+                    }
+                }
+    
+                &:last-of-type {
+                    padding: 180px 60px 200px 0 !important;
+                    @include respond(tab-port) {
+                        padding: 100px 60px 200px 60px !important;
+                    }
+                    @include respond(phone) {
+                        padding: 100px 30px 200px 30px !important;
+                    }
+                    .cta-wrapper {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 30px;
+                        flex-wrap: wrap;
+                    }
+    
+                    a {
+                        font-weight: $light;
+                    }
+                }
+            }
+        }
+    }
+}

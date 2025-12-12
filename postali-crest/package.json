@@ -1,0 +1,19 @@
+{
+  "name": "postali-209",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "When installing theme on WordPress site be sure to do the following: - Rename the downloaded theme folder from postali-crest-main to just **postali-crest**. - Download and install required plugins: https://drive.google.com/drive/folders/18we_0hSqLgh6wzwmYK4vcU6U52y9Xkw-?usp=sharing - Install required ACF JSON: Located in this theme folder under **the acf-json-import-files** folder in root. Download this file to your desktop, then in the WP Admin Dashboard, navigate to the ACF Plugin > Tools and import the file."
+}

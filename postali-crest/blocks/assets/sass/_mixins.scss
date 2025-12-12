@@ -1,0 +1,66 @@
+@mixin ppc-block {
+    .ppc-cta-block {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        p {
+            line-height: 125%;
+            white-space: wrap;
+            font-weight: bold;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+@mixin form-styles {
+    p.gform_required_legend {
+        font-size: 15px !important;
+        color: $white !important;
+    }
+    .gform_description {
+        display: none !important;        
+    }
+    .gform_wrapper {
+        padding: 20px;
+        background: $blk;
+        .gfield_label {
+            font-family: $oswald;
+            color: $white;
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: $white;
+            text-decoration: none;
+            color: $blk !important;
+            border: 1px solid $blk;
+            transition: $trans;
+            font-family: $oswald;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $blk;
+                color: $yellow !important;
+                border: 1px solid $white;
+            }
+        }
+
+        #label_5_10_1,
+        #label_6_10_1 {
+            color: $white;
+            font-weight: bold;
+        }
+
+        #gfield_description_5_10,
+        #gfield_description_6_10 {
+            color: $white;
+            font-size: 12px;
+            line-height: 150%;
+        }
+    }
+}

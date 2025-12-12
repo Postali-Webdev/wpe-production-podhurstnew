@@ -1,0 +1,449 @@
+.testimonials-block {
+    .stars {
+        position: relative;
+
+        &::after {
+            content: "★★★★★";
+            color: $yellow;
+            font-size: 17px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .reviews-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 0 2% 0 auto;
+
+        .rating {
+            display: block;
+            text-align: center;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: -17px;
+                width: 2px;
+                height: 100%;
+                top:0;
+                background:$blk;
+                content: "";
+            }
+
+            .average {
+                font-size: 30px;
+                font-weight: bold;
+                font-family: $sans;
+            }
+
+            .total {
+                font-size: 13px;
+                text-transform: uppercase;
+                font-family: $sans;
+            }
+        }
+
+        .logo {
+            width: 100px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .testimonial {
+        background:$white;
+        position: relative;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 30px 30px 65px;
+        flex-direction: column;
+        width:31.3%;
+        margin:0 1%;
+
+        @include respond(tab-land) {
+            width: 100%;
+            margin:10px 0;
+        }
+
+        p {
+            margin-bottom: 0;
+
+            &.author {
+                position: absolute;
+                bottom:30px;
+                color:#267DC1;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: bold;
+                line-height: 100%;
+            }
+        }
+    }
+
+    a.more {
+        display: flex;
+        align-items: center;
+        color: $blk;
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+            color:$blk;
+            text-decoration: none;
+        }
+    }
+
+    .icon-crest-arrow-right {
+        margin-left: 10px;
+        font-size: 18px;
+        color:$blk;
+    }
+
+    &#testimonials-one {
+        background: $blk;
+        padding: 80px;
+        @include respond(tab-port) {
+            padding: 50px;
+        }
+        @include respond(phone) {
+            padding: 30px 20px;
+        }
+        .rating-details-block {
+            display: flex;
+            margin-bottom: 60px;
+            align-items: center;
+            justify-content: space-between;
+
+            @include respond(phone) {
+                display: block;
+            }
+
+            .logo-block {
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+
+                @include respond(phone) {
+                    margin-bottom: 15px;
+                }
+
+                .stars {
+                    margin-left: 15px;
+                }
+            }
+
+            img {
+                width: 90px;
+                -webkit-filter: invert(1);
+                        filter: invert(1);
+            }
+        }
+
+        .column-66 {
+            flex-direction: column;
+
+            p {
+                color:$white;
+                font-size: 22px;
+                line-height: 180%;
+                font-weight: normal;
+                @include respond(tab-land) {
+                    font-size: 18px;
+                }
+            }
+
+            .name-date {
+                p {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                }
+            }
+
+            .more {
+                display:flex;
+                align-items: center;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+
+                a {
+                    color:$white;
+                    text-decoration: underline;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                .icon-crest-arrow-right {
+                    margin-left: 10px;
+                    font-size: 18px;
+                    color:$white;
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $blk;
+                    margin-left: 20px;
+                    transition: $trans;
+
+                    &::before {
+                        font-size: 15px;
+                    }
+                }
+
+                &:hover {
+                    .icon-crest-arrow-right {
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+
+        .cta-block  {
+            background: $white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            @include respond(tab-port) {
+                margin-top: 50px;
+            }
+
+            p.lrg {
+                font-size: 24px;
+                font-weight: bold;
+                color: $blk;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.testimonials-scroller {
+    margin: 80px 0;
+    @include respond(tab-land) {
+        .column-full {
+            flex-direction: column-reverse;
+        }
+    }
+    .slider-arrow-wrapper {
+        position: absolute;
+        width: 880px;
+        height: 452px;
+        left: calc(50% - 440px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respond(tab-land) {
+            height: 20px;
+            position: relative;
+            bottom: 0;
+            left: unset;
+            margin: 30px auto 0 auto;
+            width: 100px;
+        }
+        .slick-custom-btn {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+
+            &:after {
+                content: "\e87a";
+                width: 100%;
+                height: 100%;
+                font-size: 25px;
+                font-family: $icomoon;
+            }
+
+            &.testimonial-slick-custom-prev {
+                left: 0px;
+                transform: rotate(180deg);
+            }
+
+            &.testimonial-slick-custom-next {
+
+                right: 0px;
+            }
+        }
+    }
+
+    .testimonial {
+        min-width: 700px;
+        width: 700px;
+        max-width: 700px;
+        min-height: 350px;
+        height: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        padding: 50px;
+        margin: 0 30px;
+        text-align: left;
+        background: $white;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+        @include respond(tab-land) {
+            min-width: auto;
+            width: auto;
+            max-width: 100%;
+            height: fit-content;
+            max-height: fit-content;
+            margin: 0 30px;
+        }
+        .column-full {
+            flex-direction: column;
+        }
+        .row-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .case-category {
+                font-size: 1.5rem;
+                font-family: $serif;
+                text-transform: uppercase;
+                letter-spacing: 2.4px;
+                color: $dkblue;
+                background: $ltgrey;
+                padding: 6px 12px;
+                border-radius: 30px;
+            }
+        }
+        
+        .row-2 {
+            margin-top: 60px;
+            @include respond(phone) {
+                margin-top: 30px;
+            }
+            p {
+                color: $blk;
+                font-family: $serif;
+                font-size: 1.8rem;
+                line-height: 3.5rem;
+                font-weight: $normal;
+                @include respond(phone) {
+                    font-size: 1.6rem;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        .row-3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            p.author {
+                color: $red;
+                font-size: 1.8rem;
+                letter-spacing: 2.7px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            img {
+                max-width: 100px;
+            }
+        }
+
+        @include respond(phone) {
+            padding: 20px;
+        }
+    }
+
+    #testimonials {
+        display: grid;
+        margin: 0 auto;
+
+        @include respond(phone) {
+            max-width: 100%;
+        }
+
+        .slick-list {
+            display: flex;
+            gap: 30px;
+
+            .slick-track {
+                display: flex;
+                justify-content: space-between;
+
+                .slick-slide {
+                    &:not(.slick-current) {
+                        opacity: 0.65;
+                    }
+                }
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            height: 45px;
+            width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $blk;
+            border-radius: 15px;
+
+            @include respond(phone) {
+                position: absolute;
+                top: -30px;
+                height: 40px;
+                width: 40px;
+            }
+
+            &::before {
+                color: $white;
+                font-size: 24px;
+
+                @include respond(phone) {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -60px;
+
+            @include respond(phone) {
+                left: auto;
+                right: 50px;
+            }
+
+            &::before {
+                content: "\e90a";
+                font-family: $icomoon;
+            }
+        }
+
+        .slick-next {
+            right: -60px;
+
+            @include respond(phone) {
+                right: 0;
+            }
+
+            &::before {
+                content: "\e908";
+                font-family: $icomoon;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.contact-block {
+    .gform_wrapper {
+        background: $white;
+        border-radius: 0px;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        .gfield_required {
+            color: $white !important;
+        }
+
+        p.gform_required_legend {
+            color: $white;
+            font-family: $sans !important;
+            text-transform: uppercase !important;
+            font-weight: $normal !important;
+            letter-spacing: 2.4px !important;
+        }
+
+        .gform_fields {
+            grid-row-gap: 25px !important;
+        }
+
+        input, 
+        textarea {
+            border: none !important;
+            box-shadow: none !important;
+            background: $ltgrey !important;
+            padding: 25px !important;
+            font-family: $sans !important;
+        }
+
+        input[type=submit] {
+            display: block;
+            cursor: pointer;
+            width: fit-content !important;
+            margin: 20px auto !important;
+            background: $blue !important;
+            text-transform: uppercase !important;
+            font-family: $serif !important;
+            font-weight: $normal !important;
+            padding: 20px 40px !important;
+            letter-spacing: 1px !important;
+        }
+    }
+
+    &.split {
+        .columns {
+            gap: 2em;
+        }
+    }
+}

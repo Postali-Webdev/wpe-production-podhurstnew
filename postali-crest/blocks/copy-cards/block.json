@@ -1,0 +1,15 @@
+{
+  "name": "acf/copy-cards",
+  "title": "Crest Copy Cards",
+  "description": "Displays Copy broken into 3 columns of cards",
+  "category": "postali-blocks",
+  "icon": "<svg fill='#000000' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'><g id='SVGRepo_bgCarrier' stroke-width='0'></g><g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g><g id='SVGRepo_iconCarrier'> <path d='M184.00781,76h-144a12.01343,12.01343,0,0,0-12,12V200a12.01343,12.01343,0,0,0,12,12h144a12.01343,12.01343,0,0,0,12-12V88A12.01343,12.01343,0,0,0,184.00781,76Zm4,124a4.00458,4.00458,0,0,1-4,4h-144a4.00458,4.00458,0,0,1-4-4V88a4.00458,4.00458,0,0,1,4-4h144a4.00458,4.00458,0,0,1,4,4Zm40-144V176a4,4,0,0,1-8,0V56a4.00458,4.00458,0,0,0-4-4h-152a4,4,0,0,1,0-8h152A12.01343,12.01343,0,0,1,228.00781,56Z'></path> </g></svg>",
+  "keywords": ["cards", "copy"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "copy-cards.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,293 @@
+@include respond(tab-land) {
+
+    @keyframes slideover {
+        0% { left:150%; margin-left: 100%; }
+        100% { left:0; margin-left: 0;}
+    }
+    
+    @-webkit-keyframes slideover {
+        0% { left:150%; margin-left: 100%; }
+        100% { left:0; margin-left: 0;}
+    }
+
+    @keyframes slideover-submenu {
+        0% {
+            left: 150%;
+            margin-left: 100%;
+        }
+
+        100% {
+            left: -30px;
+            margin-left: 0;
+        }
+    }
+
+    @-webkit-keyframes slideover-submenu {
+        0% {
+            left: 150%;
+            margin-left: 100%;
+        }
+
+        100% {
+            left: -30px;
+            margin-left: 0;
+        }
+    }
+
+    @keyframes slideback {
+        0% { left:0; margin-left: 0; }
+        100% { left:150%; left:100%; }
+    }
+    
+    @-webkit-keyframes slideback {
+        0% { left:0; margin-left: 0; }
+        100% { left:150%; left:150%; }
+    }
+
+    header {
+        height: 96px;
+        #header-top {
+            max-width: 100%;
+            width: calc(100% - 80px);
+            padding: 0 30px;
+            &_mobile { //styles for hamburger toggle
+                display: block;
+                position: absolute;
+                top: 35px;
+                right: 25px;
+                #menu-icon {
+                    width: 40px;
+                    height: 25px;
+                    position: relative;
+                    display: block;
+                    margin-top: 0;
+                    margin-right: 0;
+                    transition: all 0.4s;
+                    -webkit-transition: all 0.4s;
+                    -moz-transition: all 0.4s;
+            
+                    .line {
+                        display: block;
+                        background: $dkblue;
+                        width: 40px;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        transition: all 0.4s;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+            
+                        &.line-1 {
+                            top: 0;
+                        }
+            
+                        &.line-2 {
+                            top: 50%;
+                            width: 80%;
+                            right: 0;
+                            left: auto;
+                        }
+            
+                        &.line-3 {
+                            top: 100%;
+                            width: 60%;
+                            right: 0;
+                            left: auto;
+                        }
+                    }
+            
+                    &.active {
+                        transform: rotateY(180deg);
+            
+                        .line-1 {
+                            transform: translateY(12px) translateX(0) rotate(45deg);
+                            -webkit-transform: translateY(12px) translateX(0) rotate(45deg);
+                            -moz-transform: translateY(12px) translateX(0) rotate(45deg);
+                        }
+            
+                        .line-2 {
+                            opacity: 0;
+                        }
+            
+                        .line-3 {
+                            transform: translateY(-12px) translateX(0) rotate(-45deg);
+                            -webkit-transform: translateY(-12px) translateX(0) rotate(-45deg);
+                            -moz-transform: translateY(-12px) translateX(0) rotate(-45deg);
+                            width: 100%;
+                        }
+                    }
+            
+                    &.toggle-nav {
+                        transition-delay: .1s;
+            
+                        &.active {
+                            transition-delay: .1s;
+                        }
+                    }
+                }
+            }
+            &_left { //styles for navigation logo
+                width: 300px;
+                justify-content: flex-start;
+                a {
+                    img {
+                        width: 300px;
+                        height: 100%;
+                        @include respond(phone) {
+                            width: 225px;
+                        }
+                    }
+                }
+            }
+            &_right { //styles for flyout navigation
+                &_menu {
+                    .menu { //top level menu
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        position: absolute;
+                        left: 110%;
+                        top: 96px;
+                        width: 100%;
+                        height: calc(100vh - 126px);
+                        // overflow: scroll;
+                        background: $dkblue;
+                        margin: 0;
+                        padding: 20px 0;
+                        border-top: solid 1px $white;
+                        gap: 10px;
+                        &.opened {
+                            -webkit-animation: .5s ease 0s normal forwards 1 slideover;
+                            animation: .5s ease 0s normal forwards 1 slideover;
+                        }
+                        .nav-btn {
+                            margin-left: 30px;
+                            margin-top: 15px;
+                            width: calc(100% - 60px);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &:after {
+                                left: 15px !important;
+                            }
+                            a {
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                        li {
+                            a {
+                                font-size: 1.6rem;
+                            }
+                        }
+                        li:not(.nav-btn) {
+                            @include nav-search-mobile;
+                            width: calc(100% - 60px);
+                            padding: 20px 30px 20px 0 !important;
+                            margin: 0 auto !important;
+                            box-sizing: border-box;
+                            position: relative;
+                            border-bottom: solid 1px $white;
+                            a {
+                                color: $white;
+                                text-decoration: none;
+                                line-height: 2.4rem;
+                            }
+                            .accordion-toggle, .accordion-toggle2 {
+                                position: absolute;
+                                top: 18px;
+                                right: 15px;
+                                z-index: 99;
+                                width: 20px;
+                                height: 20px;
+                                transition: $trans;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                span.icon-chevron-right {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+                                    &:before {
+                                        content: "\e87a";
+                                        display: block;
+                                        font-family: $icomoon;
+                                        font-size: 25px;
+                                        color: $white;
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            .sub-menu { //second level menu
+                                display: flex;
+                                left: 150%;
+                                height: calc(100vh - 96px);
+                                background: $blue;
+                                width: calc(100% + 60px) !important;
+                                min-width: calc(100% + 60px) !important;
+                                &.opened {
+                                    z-index: 999;
+                                    -webkit-animation: .5s ease 0s normal forwards 1 slideover-submenu;
+                                    animation: .5s ease 0s normal forwards 1 slideover-submenu;
+                                    left: -30px;
+                                    display: block;
+                                }
+                                .child-close, .child-close2 {
+                                    display: flex;
+                                    justify-content: flex-start;                
+                                    align-items: center;
+                                    position: relative;
+                                    padding: 10px 15px 10px 38px;
+                                    background: $dkblue;
+                                    color: $white;
+                                    width: -webkit-fit-content;
+                                    width: -moz-fit-content;
+                                    width: fit-content;
+                                    border-radius: 0px;
+                                    margin: 15px 0 10px 20px;
+                                    font-family: $sans;
+                                    text-transform: uppercase;
+                                    font-size: 1.6rem;
+                                    font-weight: $medium;
+                                    .icon-chevron-left {
+                                        display: flex;
+                                        justify-content: center;                    
+                                        align-items: center;
+                                        position: absolute;
+                                        left: 5px;
+                                        height: 24px;
+                                        width: 24px;
+                                        &:before {
+                                            content: "\e87a";
+                                            font-family: $icomoon;
+                                            font-size: 22px;
+                                            height: 100%;
+                                            width: 100%;
+                                            color: $white;
+                                            transform: rotate(180deg);
+
+                                        }
+                                    }
+                                }
+                                li {
+                                    a {
+                                        color: $white;
+                                    }
+                                    .sub-menu { //third level menu
+                                        li {
+                                            a {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}

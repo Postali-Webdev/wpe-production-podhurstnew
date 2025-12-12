@@ -1,0 +1,15 @@
+{
+  "name": "acf/tabs",
+  "title": "Crest Tabbed Content Block",
+  "description": "Tabbed content block using ACF fields.",
+  "category": "postali-blocks",
+  "icon": "<svg viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='#000000'><g id='SVGRepo_bgCarrier' stroke-width='0'></g><g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g><g id='SVGRepo_iconCarrier'> <path fill='#000' d='M14 4v-2h-14v12h16v-10h-2zM10 3h3v1h-3v-1zM6 3h3v1h-3v-1zM15 13h-14v-10h4v2h10v8z'></path> </g></svg>",
+  "keywords": ["tabs"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tabs.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

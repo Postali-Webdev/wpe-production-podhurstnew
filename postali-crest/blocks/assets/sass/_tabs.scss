@@ -1,0 +1,253 @@
+.tabbed-content {
+    a.btn {
+        margin:0 auto;
+    }
+
+    .column-75 {
+        @include respond(desktop) {
+            width: 100%;
+        }
+    }
+    
+    .tabs_wrapper {
+        width:100%;
+        text-align: center;
+        margin: 0 auto;
+        background: transparent;
+        font-family: arial;
+        display: flex;
+        flex-wrap: wrap;
+        
+        ul.tabs {
+            display: inline-flex;
+            vertical-align: top;
+            position: relative;
+            z-index: 10;
+            margin: 25px 0 0;
+            padding: 0;
+            width: 100%;
+            list-style: none;
+            float:left;
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+
+            @include respond(phone) {
+                display: block;
+                width: 100%;
+            }
+            
+            li {
+                cursor: pointer;
+                text-align: left;
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                color: $white;
+                font-size: 18px;
+                display: block;
+                border-bottom: 2px solid $blk;
+                padding: 15px 40px;
+                color: $blk;
+                text-transform: none;
+                background:$white;
+                position: relative;
+                font-family: $sans;
+
+                @include respond(phone) {
+                    border-radius: 0 !important;
+
+                    &::after {
+                        display:none !important;
+                    }
+                }
+
+                &:first-of-type {
+                    border-radius: 10px 0 0;
+                }
+
+                &:last-of-type {
+                    border-radius: 0 10px 0 0;
+                }
+
+                &:not(:last-of-type) {
+                    &::after {
+                        position: absolute;
+                        right: 0;
+                        top: 15px;
+                        height: calc(100% - 30px);
+                        width: 2px;
+                        background: $blk;
+                        content: "";
+                    }
+                }
+
+                &.active {
+                    &::after {
+                        position: absolute;
+                        left: -2px;
+                        top: 15px;
+                        height: calc(100% - 30px);
+                        width: 2px;
+                        background: $white;
+                        content: "";
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    &.active {
+                        &::after {
+                            display:none;
+                        }
+                    }
+                }
+                
+                &:hover {
+                    transition: all 0.3s ease;
+                    background-color:$blk;
+                    color:$white;
+                }
+                
+                &.active {
+                    color: $white;
+                    transition: all 0.3s ease;
+                    background-color:$blk;
+                }
+                
+                span {
+                    display: block;
+                    text-transform: none;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    
+    
+    .tab_container {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 100%;
+        text-align: left;
+        background: $white;
+        border-radius: 0 10px 10px 10px;
+        
+        .tab_drawer_heading {
+            display: none;
+        }
+        
+        .tab_content {
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+            display: none;
+            padding: 100px 70px;
+            text-align: justify;
+
+            @include respond(phone) {
+                padding:60px 40px;
+            }
+
+            .tab-contents {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 50px;
+
+                @include respond(phone) {
+                    flex-wrap: wrap;
+                }
+
+                .tab-image {
+                    max-width: 20%;
+                    width: 100%;
+
+                    @include respond(phone) {
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .tab-copy {
+                    text-align: left;
+                    
+                    p {
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+        
+                        &.tab-headline {
+                            font-size: 30px;
+                            color: $blk;
+                            font-weight: bold;
+                        }
+
+                        a {
+                            color:inherit;
+                            text-decoration: underline;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    
+
+                    a.btn {
+                       border: solid 1px $blk;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 769px) {
+        ul.tabs {
+            display: none;
+        }
+        .tab_container {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 0;
+        }
+        
+        .tab_content { border: 0; }
+        .tab_drawer_heading {
+            background-color: $white;
+            background: $white;
+            color: $blk;
+            margin: 0 0 2px 0;
+            padding: 5px 20px;
+            display: block;
+            cursor: pointer;
+            text-transform: none;
+            font-size: 18px;
+            font-weight: bold;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+        }
+            .tab_drawer_heading:hover {
+            background: $ltgrey;
+            color: $white;
+        }
+        .d_active {
+            background: #f10102;
+            background: #f10102;
+            color: #fff;
+        }
+    }
+      
+}

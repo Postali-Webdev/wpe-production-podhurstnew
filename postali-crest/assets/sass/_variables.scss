@@ -1,0 +1,63 @@
+/**
+ * Sass variables and functions.
+ *
+ * @package Postali Child
+ * @author Postali LLC
+ */
+
+// Breakpoints
+$desktop-full: 1920px;
+$desktop-lg: 1400px;
+$desktop: 1200px;
+$tab-land: 1024px;
+$tab-port: 820px;
+$phone: 600px;
+
+// Containers
+$container-max-width: $desktop-lg;
+$container-padding:30px;
+
+// Transitions
+$transition-speed:.3s;
+$transition-fast:.3s ease-in-ease-out;
+$transition-slow:.5s ease-in-ease-out;
+
+// Core Colors
+$blk: #000000;
+$white: #FFFFFF;
+$dk-grey: #171717;
+$med-grey: #363636;
+$nav-grey: #EDEDED;
+$grey: #D9D9D9D9;
+$ltgrey: #F2F2F2;
+$red:#6B221A;
+$orange: #8E443C;
+$green: #80be41;
+$dkblue: #2A2E40;
+$blue: #445594;
+$hoverblue: #293A7E;
+$yellow: #EB9915;
+
+$link-transition-speed: .15s;
+$trans: 0.2s linear;
+
+// @font-face {
+//     font-family: "Icomoon";
+//     src: url('/wp-content/themes/postali-crest/assets/fonts/icomoon/crest-block-icomoon.woff2') format('woff2'),
+// }
+
+// Typography
+$sans: 'Roboto', sans-serif;
+$serif: 'Playfair Display', serif;
+$phone-btn-font: "Bellefair",
+serif;
+$icomoon: 'Icomoon';
+
+$body-line-height: 130%;
+
+// Font Weight
+$light: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700; 
+$black: 900;

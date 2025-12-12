@@ -1,0 +1,163 @@
+.related-resources {
+    h2 {
+        margin:0 auto 50px;
+        color:$white;
+        text-align:center;
+    }
+
+    .btn {
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .resources {
+        display: flex;
+        align-items: normal;
+        justify-content: space-between;
+        gap: 1%;
+
+        &.boxes-1 {
+            .resource {
+                width:100%;
+                display: flex;
+                flex-direction: row;
+
+                @include respond(tab-port) {
+                    flex-direction: column;
+                }
+
+                .resource-image {
+                    display: flex;
+
+                    img {
+                        height: auto;
+
+                        @include respond(tab-port) {
+                            height:300px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.boxes-2 {
+            @include respond(tab-port) {
+                flex-wrap: wrap;
+            }
+
+            .resource {
+                width:49.5%;
+
+                @include respond(tab-port) {
+                    width:100%;
+                }
+            }
+        }
+
+        &.boxes-3 {
+            @include respond(tab-land) {
+                flex-wrap: wrap;
+            }
+
+            .resource {
+                width:32.8%;
+
+                @include respond(tab-land) {
+                    width:100%;
+                }
+            }
+        }
+
+        &.boxes-4 {
+            @include respond(tab-land) {
+                flex-wrap: wrap;
+            }
+
+            .resource {
+                width:24.5%;
+
+                @include respond(tab-land) {
+                    width:100%;
+                }
+            }
+        }
+
+        .resource {
+            background: white;
+            padding:0;
+            box-sizing: border-box;
+            border-radius: 15px;
+            transition: $trans;
+            position: relative;
+            margin-bottom: 10px;
+
+            .resource-image {
+                width: 100%;
+
+                img {
+                    height: 300px;
+                    width:100%;
+                    border-radius: 15px;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    -o-object-position: center;
+                       object-position: center;
+                }
+            }
+
+            .resource-copy {
+                padding:50px 50px 80px;
+
+                h3 {
+                    margin-bottom: 20px;
+                }
+    
+                .link-button {
+                    position: absolute;
+                    bottom: 35px;
+                    right: 35px;
+                    display: flex;
+                    align-items: center;
+                    color:$blk;
+                    text-decoration: none;
+                    font-family: $sans;
+                    font-size: 16px;
+                    font-weight: bold;
+    
+                    .text {
+                        text-decoration: underline;
+                    }
+    
+                    .icon-crest-arrow-right {
+                        height: 35px;
+                        width:35px;
+                        margin-left: 15px;
+                        background-color: #70C1B3;
+                        color:$white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: $trans;
+                        &:before {
+                            font-family: $icomoon;
+                            content: "\e908";
+                        }
+                    }
+    
+                    &:hover {
+                        .icon-crest-arrow-right {
+                            rotate: -45deg;
+                            background: $blk;
+                        }
+                    }
+                }
+            }
+            
+            &:hover {
+                box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.15);
+            }
+        }
+    }
+
+}

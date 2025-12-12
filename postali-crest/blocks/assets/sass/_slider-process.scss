@@ -1,0 +1,227 @@
+.process-slider {
+    .columns {
+        justify-content: flex-end;
+    }
+    .process-slider-nav {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        right: 20vw;
+        margin-bottom: 10px;
+        @include respond(tab-land) {
+            right: 30px;
+        }
+        .slick-custom-btn {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                z-index: 3;
+                position: relative;
+        
+                &:after {
+                    content: "\e87a";
+                    width: 100%;
+                    height: 100%;
+                    font-size: 25px;
+                    font-family: $icomoon;
+                }
+        
+                &.slick-custom-prev {
+                    transform: rotate(180deg);
+                }
+            }
+    }
+    #process-slider {
+        overflow: hidden;
+        .slick-list {
+            position: relative;
+            left: calc(50% - 700px);
+            @media screen and (max-width: 1520px) {
+                left: 60px;
+            }
+            @include respond(tab-port) {
+                left: unset;
+            }
+            
+        }
+        .slick-track {
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            position: relative;
+        }
+        .slide {
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            height: -moz-fill-available;
+            height: fill-available;
+            margin-right: 20px;
+            position: relative;
+            background: $white;
+            @include respond(tab-port) {
+                margin: 0 30px;
+            }
+            @include respond(phone) {
+                height: 100%;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 90%;
+                height: 14px;
+                background: $blue;
+                z-index: 1;
+                clip-path: polygon(0% 0, 100% 0%, 98% 100%, 0 100%);
+            }
+            @include respond(desktop) {
+                align-items: normal;
+            }
+
+            .column-left {
+                background: $white;
+                padding: 50px 100px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                &.column-full {
+                    width: 100%;
+                    padding: 30px;
+                }
+                @include respond(tab-land) {
+                    padding:40px 80px;
+                }
+
+                @include respond(tab-port) {
+                    width:100%;
+                }
+
+                h3 {
+                    color:$orange;
+                    font-size: 3rem;
+                    font-family: $serif;
+                    font-weight: $normal;
+                }
+            }
+
+            .column-right {
+                width: 40%;
+                &.hide-right {
+                    display: none;
+                }
+                @include respond(tab-port) {
+                    width:100%;
+                }
+
+                .img-box {
+                    width: 100%;
+                    max-height: 520px;
+                    overflow: hidden;
+                    height: 100%;
+                    border-radius: 10px;
+
+                    @include respond(tab-land) {
+                        max-height: none;
+                        border-radius: 0 10px 10px 0;
+                    }
+
+                    @include respond(tab-port) {
+                        max-height: 350px;
+                        border-radius: 0 0 10px 10px;
+                    }
+
+                    img {
+                        -o-object-fit: cover;
+                           object-fit: cover;
+                        -o-object-position: center;
+                           object-position: center;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#process-slider {
+    margin-bottom: 0;
+    max-width: 100%;
+    
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slick-dots {
+        position: relative;
+        bottom: 0;
+        list-style: none;
+        display: flex;
+        text-align: left;
+        padding: 0;
+        margin: 0 !important;
+        width: 100%;
+
+        li {
+            margin:0 9px 0 0 !important;
+            display:flex;
+            position: relative;
+            height: 20px;
+            width: 20px;
+            padding: 0;
+            cursor: pointer;
+            font-size: 20px !important;
+
+            button {
+                background: transparent;
+                display: block;
+                height: 20px;
+                width: 20px;
+                outline: none;
+                line-height: 0px;
+                font-size: 0px;
+                color: transparent;
+                padding: 0;
+                cursor: pointer;
+                position: relative;
+                border: 2px solid #236CE0;
+                box-sizing: border-box;
+                border-radius: 50%;
+
+                &::before {
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    font-family: "slick";
+                    font-size: 64px;
+                    line-height: 20px;
+                    text-align: center;
+                    background: transparent;
+                    opacity: .25;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+
+            }
+
+            &.slick-active {
+                button {
+                    &::before {
+                        background:#236CE0;
+                        opacity: 1;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.btn {
+    display: block !important;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    &-left {
+        margin: 0 auto 0 0;
+    }
+    &-center {
+        margin: 0 auto;
+    }
+    &-right {
+        margin: 0 0 0 auto;
+    }
+    &.orange-btn {
+        background: $orange;
+        &:after {
+            background: $red;
+        }
+    }
+    &.mobile-only-btn {
+        display: none !important;
+        @include respond(phone) {
+            display: block !important;
+        }
+    }
+    &.desktop-only-btn {
+        display: block !important;
+        @include respond(phone) {
+            display: none !important;
+        }
+    }
+}

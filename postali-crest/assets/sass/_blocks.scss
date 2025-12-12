@@ -1,0 +1,529 @@
+// banner //
+
+.banner {
+    background-position: center center ;
+    background-size: cover ;
+    position: relative;
+    padding-top: 30px;
+
+    .column-66,
+    .column-50 {
+        display:block;
+
+        &.featured {
+            background:$white;
+            padding:3% 4%;
+            box-sizing: border-box;
+            width:50%;
+
+            @include respond(tab-port) {
+                width:100%;
+                margin-top: 50px;
+            }
+
+            @include respond(phone) {
+                padding:40px;
+            }
+
+            p {
+                color:$blk;
+                max-width: 100%;
+                margin-bottom: 0;
+
+                &.notable {
+                    font-size: 14px;
+                    font-weight: normal;
+                    letter-spacing: 3px;
+                    margin-bottom: 10px;
+                    font-family: $sans;
+                    color: $green;
+                    font-size: 20px;
+                }
+
+                &.reviewer {
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin: 15px 0;
+                    text-transform: uppercase;
+                }
+            }
+
+            img {
+                max-height: 40px;
+            }
+        }
+
+        &.result {
+            width:50%;
+
+            @include respond(tab-port) {
+                width:100%;
+                margin-top: 50px;
+                margin-bottom: 90px;
+            }
+            
+            .result-main {
+                background:$white;
+                padding:5% 8%;
+
+                p {
+                    color:$blk;
+                    max-width: 100%;
+                    margin-bottom: 0;
+
+                    &.notable {
+                        font-size: 14px;
+                        font-weight: normal;
+                        letter-spacing: 3px;
+                        margin-bottom: 10px;
+                        font-family: $sans;
+                        color: $green;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .accordions {
+                border-bottom: none;
+                position: absolute;
+                width: 100%;
+
+                &_title  {
+                    padding: 0 30px;
+                    height: 70px;
+                    justify-content: flex-end;
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    &.active {
+                        span {
+                            &::after {
+                                rotate: 45deg;
+                            }
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        display: flex;
+
+                        span {
+                            &::after {
+                                content: "+";
+                                display: inline-block;
+                                transition: 0.2s linear;
+                                font-size: 16px;
+                                position: relative;
+                                color: #fff;
+                                font-size: 24px;
+                                margin-left: 15px;
+                                font-weight: bolder;
+                                top:auto;
+                                transition: $trans;
+                            }
+                        }
+                    }
+                }
+
+                &_content {
+                    display: none;
+                    padding: 0px 8% 20px;
+                    text-align: left;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    p {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    p#breadcrumbs {
+        padding-top: 0;
+        font-size: 12px;
+        color:$white;
+        font-weight: normal;
+
+        @include respond (tab-land) {
+            line-height: 200%;
+            padding-bottom: 0;
+        }
+
+        .separator {
+            margin: 0 5px 0 8px;
+        }
+    }
+
+    h1 {
+        text-transform: none;
+        font-size: 60px;
+        color:$white;
+        line-height: 120%;
+
+        @include respond(tab-land) {
+            font-size: 54px;
+        }
+
+        @include respond(tab-port) {
+            font-size: 48px;
+        }
+
+        @include respond(phone) {
+            font-size: 42px;
+        }
+    }
+
+    p {
+        color:$white;
+        max-width: 70%;
+
+        @include respond (tab-land) {
+            max-width: 100%;
+        }
+
+        &.cta {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        &.blog-date {
+            margin-bottom: 10px;
+        }
+    }
+
+    @include contact-block;
+
+    .banner-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            height: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: right;
+               object-position: right;
+            width: 100%;
+
+            @include respond(tab-land) {
+                -o-object-position: center top;
+                   object-position: center top;
+            }
+        }
+    }
+
+    .banner-gradient {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// awards //
+
+.awards {
+    padding: 50px 0;
+    position: relative;
+    margin-top: 60px;
+
+    &::before {
+        position: absolute;
+        content: "OUR AWARDS AND AFFILIATIONS";
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40px;
+        font-family: $sans;
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+    
+    .container {        
+        .columns {
+            justify-content: center;
+            
+            .column-full {
+                justify-content: center;
+                align-items: center;
+
+                @include respond(phone) {
+                    flex-direction: column;
+                }
+
+                .award-img {
+                    max-height: 100px;
+                    max-width: 250px;
+                    width: 100%;
+                    height: auto;
+                    margin:10px 20px;
+
+                    @include respond(phone) {
+                        margin:20px auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// sidebar //
+
+.sidebar-block {
+    @include respond(tab-port) {
+        margin-top: 30px;
+    }
+
+    p.sidebar-more {
+        transition:$trans;
+        
+        a {
+            font-weight: 700;
+            text-transform:uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-size: 14px;
+            color: #2a485a;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        span {
+            rotate:-90deg;
+            display:inline-block;
+            font-size: 12px;
+            margin-left: 5px;
+            transition:$trans;
+        }
+    }
+    
+
+    .sidebar-spacer {
+        height:1px;
+        display: block;
+        margin: 40px 0;
+        width: 100%;
+        border-bottom: 1px solid #b3eaea;
+    }
+
+    .sidebar-header {
+        display: inline-block;
+        font-size: 14px;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: bold;
+        padding: 10px 30px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    
+    .testimonial-block {
+        padding: 50px;
+        box-sizing: border-box;
+
+        @include respond(tab-land) {
+            padding:30px;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+
+            &.testimonial {
+                font-size:20px;
+                margin-bottom: 40px;
+                font-weight: 300;
+                line-height: 175%;
+                letter-spacing: 0;
+                text-transform: none;
+
+                @include respond(tab-land) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .result-block {
+        p {
+            &.large {
+                margin-bottom: 10px;
+            }
+
+            &.result {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .sidebar-menu {
+        .menu {
+            list-style-type: none;
+            margin: 0;
+
+            li {
+                margin: 0;
+                border-bottom: 1px solid $dkblue;
+                position: relative;
+
+                a {
+                    display: block;
+                    font-size: 16px;
+                    padding: 10px 0;
+                    line-height: 100%;
+                    position: relative;
+                    text-decoration: none;
+                    max-width: 85%;
+                    font-weight: 400;
+                }
+
+                &.current_page_item {
+                    a {
+                        font-weight: bold;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+
+                .all-pages,
+                .children {
+                    display: none;
+                }
+
+                &::after {
+                    content:"\e907";
+                    font-family: $icomoon;
+                    rotate:-90deg;
+                    display:inline-block;
+                    font-size: 12px;
+                    margin-left: 5px;
+                    position: absolute;
+                    right:3px;
+                    transition: $trans;
+                    top:3px;
+                }
+            }
+        }
+    }
+}
+
+// practice area parent blocks 
+
+#testimonial {
+    
+    p.testimonial-callout {
+        font-size: 44px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        line-height: 115%;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+
+        img {
+            max-height: 50px;
+        }
+
+        .separator {
+            width: 1px;
+            height: 40px;
+            margin: 0 20px;
+            border-left: 1px solid $white;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#pre-footer {
+
+    padding-bottom: 80px;
+
+    h2, h3, h4, p, ul li, ol li {
+        color:$dkblue;
+    }
+
+    h2 {
+        font-size: 45px;
+        letter-spacing: 2px;
+
+        @include respond(tab-port) {
+            font-size: 40px;
+        }
+
+        @include respond(phone) {
+            font-size: 36px;
+        }
+    }
+
+    p.subhead {
+        font-size: 28px;
+        margin: 20px 0;
+        font-family: 'Bitter', sans-serif;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 125%;
+
+        @include respond(tab-port) {
+            font-size: 24px;
+        }
+
+        @include respond(phone) {
+            font-size: 20px;
+        }
+    }
+
+    .pre-footer-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .contact-block-left {
+            margin-right: 30px;
+        }
+
+        .contact-block-right {
+            p {
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                
+                a {
+                    color:inherit;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                span.icon-right-arrow {
+                    margin-left: 10px;
+                    font-size: 24px;
+                    color: $dkblue;
+                }
+            }
+        }
+    }
+}
+
+@include awards-slider;

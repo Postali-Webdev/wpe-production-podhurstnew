@@ -1,0 +1,36 @@
+#single-testimonial {
+    .star-rating {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        p {
+            font-weight: $bold;
+            font-size: 20px !important;
+            margin: 0 !important;
+        }
+        &:after {
+            content: "★★★★★";
+            color: $yellow;
+        }
+    }
+    .copy {
+        max-width: 400px;
+        @include respond(phone) {
+            max-width: auto;
+        }
+    }
+    .testimonial-author {
+        font-family: $serif;
+        letter-spacing: 3.2px;
+        text-transform: uppercase;
+        font-weight: $normal;
+        margin-bottom: 20px !important;
+    }
+    img {
+        max-width: 100px;
+        object-fit: contain;
+    }
+}

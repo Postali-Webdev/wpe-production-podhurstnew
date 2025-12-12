@@ -1,0 +1,212 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+footer {
+    .copyright {
+        padding-right: 60px;
+        position: relative;
+        bottom: -10px;
+        @include respond(phone) {
+            padding: 0 30px;
+        }
+        p {
+            text-align: end;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+.footer {    
+    background: $white;
+    padding: 0 60px;
+    @include respond(phone) {
+        padding: 0 30px;
+    }
+    p,
+    ul li a, p a, a:not(.btn) {
+        color:$blk;
+        line-height: 170%;
+        font-size: 1.6rem;
+        font-family: $sans;
+        font-weight: $light;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    .spacer-60 {
+        @include respond(phone) {
+            height:30px;
+        }
+    }
+
+    .columns {
+        border: solid 1px $blk;
+        background: $white;
+        padding: 60px;
+        position: relative;
+        top: -100px;
+        margin-bottom: -100px;
+        z-index: 3;
+        @media screen and (max-width: 1700px) {
+            padding: 30px;
+        }
+        @include respond(phone) {
+            padding: 20px;
+            top: -70px;
+            margin-bottom: -70px;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 2px;
+            height: 100%;
+            background: $blk;
+            @media screen and (max-width: 1700px) {
+                left: 29%;
+            }
+            @include respond(desktop) {
+                left: unset;
+                right: 390px;
+            }
+            @include respond(tab-land) { 
+                display: none;
+            }
+        }
+        .column-full {
+            display: grid;
+            grid-template-columns: 28% 15% 20% 10% 15%;
+            row-gap: 20px;
+            @media screen and (max-width: 1600px) {
+                grid-template-columns: 20% 20% 40%;
+            }
+        
+            @include respond(desktop) {
+                grid-template-columns: 1fr 300px;
+                column-gap: 90px;
+                row-gap: 30px;
+            }
+            @include respond(tab-land) {
+                grid-template-columns: 1fr;
+            }
+            .custom-logo-link {
+                img {
+                    max-height: 30px;
+                    width: auto;
+                    height: 65px;
+                    margin-bottom: 15px;
+                    @media screen and (max-width: 1600px) {
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                        object-position: left;
+                    }
+                    @include respond(phone) {
+                        width: 90%;
+                    }
+                }
+            }
+            .col-footer {
+                .footer-title {
+                    color: $blk;
+                    font-size: 1.8rem;
+                    font-weight: $normal;
+                    font-family: $serif;
+                    text-transform: uppercase;
+                    position: relative;
+                    margin-bottom: 60px;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 42px;
+                        height: 18px;
+                        background: url('/wp-content/uploads/2025/07/separators.svg') no-repeat;
+                        background-size: contain;
+                        bottom: -35px;
+                        left: 0;
+                    }
+                }
+                p:not(.footer-title) {
+                    margin-bottom: 10px;
+                    strong {
+                        font-weight: $bold;
+                    }
+                }
+                &.col0 {
+                    position: relative;
+                    @include respond(tab-land) {
+                        margin-bottom: 30px;
+                    }
+                    .mobile-ruler {
+                        display: none;
+                        @include respond(tab-land) {
+                            position: absolute;
+                            display: block;
+                            width: calc(100% + 60px);
+                            height: 2px;
+                            left: -30px;
+                            bottom: -31px;
+                            background: $blk;
+                        }
+                        @include respond(phone) {
+                            width: calc(100% + 40px);
+                            left: -20px;
+                        }
+                    }
+                }
+                &.col2 {
+                    min-width: 300px;
+                    @include respond(phone) {
+                        min-width: auto;
+                    }
+                    .footer-title {
+                        margin-bottom: 15px;
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    iframe {
+                        margin-bottom: 10px;
+                    }
+                    a {
+                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+                &.col3 {
+                    max-width: 200px;
+                }
+                &.col4 {
+
+                }
+                ul.menu {
+                    margin-left: 0;
+                    padding-left: 0;
+                    list-style-type: none;
+                    li {
+                        margin-left: 0;
+                        a {
+                            text-decoration: none;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
+    
+}

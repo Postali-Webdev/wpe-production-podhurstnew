@@ -1,0 +1,262 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+a {
+    font-size: 1.6rem;
+    font-family: $sans;
+    text-decoration: underline;
+    transition:$trans;
+    color: $dkblue;
+    font-weight: $normal;
+    &:hover {
+        text-decoration:none;
+    }
+}
+
+.btn {
+    display:inline-block;
+    padding:15px 35px;
+    text-decoration:none;
+    transition:$trans;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: $serif !important;
+    min-width: 172px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    span {
+        font-family: $serif !important;
+    }
+}
+p:not(.paragraph-subtitle) {
+    color: $dkblue;
+}
+ul, ol {
+    margin-bottom: 30px;
+    li {
+        font-size: 1.6rem;
+        line-height: 3rem;
+        font-weight: $light;
+        font-family: $sans;
+    }
+}
+p {
+    font-size: 1.6rem;
+    line-height: 3rem;
+    margin-bottom:30px;
+    margin-top: 0;
+    font-weight: $light;
+    font-family: $sans;
+    &.small {
+        font-size: 14px;
+    }
+
+    &.large {
+        font-size: 22px;
+    }
+
+    &.green {
+        color:$green;
+    }
+    &.paragraph-subtitle {
+        color: $orange;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        font-weight: $normal;
+        letter-spacing: 2.7px;
+        text-transform: uppercase;
+    }
+    &.paragraph-rounded-subtitle {
+        color: $white;
+        font-size: 1.6rem;
+        line-height: normal;
+        font-weight: $normal;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        border-radius: 50px;
+        padding: 10px 40px;
+        background: $orange;
+        width: fit-content;
+        &.has-text-align-center {
+            margin: 0 auto 40px auto;
+        }
+    }
+    &.boxed-paragraph {
+        background: $ltgrey;
+        padding: 40px;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+        margin-bottom: 30px;
+        font-style: italic;
+        @include respond(phone) {
+            padding: 30px !important;
+        }
+    }
+    &.paragraph-remove-bottom-margin {
+        margin-bottom: 5px !important;
+    }
+    a {
+        font-family: inherit !important;
+        color:inherit !important;
+        text-decoration: underline;
+        font-weight: inherit !important;
+        &:hover {
+            text-decoration: inherit !important;
+        }
+    }
+    strong {
+        font-weight: $bold;
+    }
+}
+
+h1 {
+    font-weight: $normal !important;
+    font-size: 4.3rem;
+    text-transform: uppercase;
+    font-family: $serif !important;
+    @include respond(tab-port) {
+        font-size: 4rem;
+    }
+    @include respond(phone) {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    margin: 30px 0 20px;
+    display:block;
+    font-size: 4rem;
+    line-height: 5rem;
+    font-family: $serif !important;
+    font-weight: normal !important;
+    text-transform: uppercase !important;
+    color: $dkblue;
+    strong {
+        font-weight: normal !important;
+    }
+    @include respond(phone) {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+    }
+}
+
+h3 {
+    display:block;
+    font-size: 3.5rem;
+    font-weight: $normal !important;
+    font-family: $serif;
+    color: $blue;
+    line-height: normal;
+    strong {
+        font-weight: $normal !important;
+    }
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}
+
+h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: $normal !important;
+    font-family: $sans;
+    color: $orange;
+    letter-spacing: 3px;
+    line-height: 2.6rem;
+    strong {
+        font-weight: $normal !important;
+    }
+}
+
+h2 {
+    margin-bottom: 30px !important;
+}
+
+h3,
+h4 {
+    margin-bottom: 20px !important;
+}
+
+.body-container {
+    ul li, 
+    ul li a,
+    ol li,
+    ol li a {
+        font-size: 1.6rem;
+        line-height: 30px;
+        margin-top: 0;
+        font-family: $sans;
+        font-weight: $light;
+        color: $dkblue;
+        margin:0;
+        strong {
+            font-weight: $bold;
+        }
+    }
+
+    ul, ol {
+        margin-bottom:30px;
+        li {
+            padding-left: 15px;
+            &::marker {
+                font-size: 10px;
+                position: relative;
+                top: -3px;
+            }
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    ul, ol {
+        width: -webkit-fill-available;
+        width: -moz-fill-available;
+        width: fill-available;
+    }
+}
+
+#breadcrumbs {
+    p, span, a {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+        color: $white;
+        font-family: $sans;
+        font-weight: $light;
+        text-transform: capitalize;
+    }
+}
+
+.has-red-color {
+    color: $red !important;
+}
+.has-orange-color {
+    color: $orange !important;
+}
+.has-dark-blue-color {
+    color: $dkblue !important;
+}
+.has-blue-color {
+    color: $blue !important;
+}
+
+.arrow-link {
+    font-weight: $light;
+    padding-right: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-underline-offset: 2px;
+    &:after {
+        content: "\e908";
+        font-family: $icomoon;
+        position: absolute;
+        right: 0;
+    }
+}

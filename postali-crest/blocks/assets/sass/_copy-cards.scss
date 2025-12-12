@@ -1,0 +1,33 @@
+.copy-cards-wrapper {
+    margin: 80px 0;
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr );
+    gap: 15px;
+    @include respond(desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        background: $white;
+        padding: 50px;
+        @include respond(phone) {
+            padding: 30px 20px;
+        }
+        p {
+            color: $dkblue;
+            &.paragraph-subtitle {
+                color: $orange;
+            }
+        }
+        a {
+            color: $dkblue !important;
+
+            &:hover {
+                color:inherit !important;
+                text-decoration: none;
+            }
+        }
+    }
+}

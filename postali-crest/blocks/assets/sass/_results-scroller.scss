@@ -1,0 +1,169 @@
+.results-scroller, .result-feed {
+    margin: 80px 0;
+    .results-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 0 60px;
+        margin: 0 auto;
+        @include respond(desktop-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond(tab-port) {
+            grid-template-columns: 1fr;
+            padding: 0 30px;
+        }
+        &.results-wrapper-1 {
+            grid-template-columns: 1fr;
+        }
+        &.results-wrapper-2 {
+            grid-template-columns: repeat(2, 1fr);
+            @include respond(desktop-lg) {
+                    grid-template-columns: repeat(2, 1fr);
+            }
+        
+            @include respond(tab-port) {
+                grid-template-columns: 1fr;
+                padding: 0 30px;
+            }
+        }
+        &.results-wrapper-3 {
+            grid-template-columns: repeat(3, 1fr);
+            @include respond(desktop-lg) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        
+            @include respond(tab-port) {
+                grid-template-columns: 1fr;
+                padding: 0 30px;
+            }
+        }
+    }
+    .result {
+        height: 100%;
+        padding: 30px;
+        margin: 0;
+        text-align: left;
+        background: $white;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+        a {
+            text-decoration: none;
+            &:hover {
+                .fake-btn {
+                    &:after {
+                        left: 0%;
+                    }
+                }
+            }
+        }
+        .columns {
+            gap: 30px;
+            flex-wrap: nowrap;
+            height: 100%;
+            flex-direction: column;
+            .column-50, .column-full {
+                width: 100%;
+                &:first-of-type {
+                    height: 200px;
+                    @include respond(tab-land) {
+                        height: auto;
+                    }
+                    @include respond(phone) {
+                        height: 200px;
+                    }
+                    .case-img {
+                        width: 100%;
+                        height: 200px;
+                        img {
+                            width: 100%;
+                            height: 200px;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                &:last-of-type {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    height: 100%;
+                    position: relative;
+                    @include respond(phone) {
+                        padding-bottom: 54px;
+                    }
+                    .img-wrapper {
+                        display: flex;
+                        gap: 15px;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            -o-object-fit: cover;
+                               object-fit: cover;
+                            -o-object-position: center;
+                               object-position: center;
+                            border-radius: 50%;
+                        }
+                    }
+                    .row-1 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                        @include respond(phone) {
+                            margin-bottom: 30px;
+                        }
+                        .case-category {
+                            font-size: 1.5rem;
+                            font-family: $sans;
+                            text-transform: uppercase;
+                            letter-spacing: 2.4px;
+                            color: $dkblue;
+                            background: $ltgrey;
+                            padding: 6px 12px;
+                            border-radius: 30px;
+                        }
+                    }
+                    .row-2 {
+                        margin-bottom: 60px;
+                        .paragraph-subtitle {
+                            font-size: 1.5rem;
+                            color: $blk;
+                        }
+                        p {
+                            margin-bottom: 15px;
+                        }
+                        h3 {
+                            color: $blk;
+                            font-size: 2.6rem;
+                            @include respond(phone) {
+                                font-size: 2rem;
+                            }
+                        }
+                        .img-wrapper {
+                            @include respond(phone) {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                    .row-3 {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        @include respond(phone) {
+            padding:20px;
+        }
+
+        p {
+            line-height: 150%;
+            margin-bottom: 0;
+            color:$blk;
+            margin-top: 15px;
+        }
+    }
+}
