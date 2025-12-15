@@ -1216,6 +1216,11 @@
                     color: $dkblue;
                 }
             }
+            .awards-outer-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             .awards-wrapper, .hidden-awards {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -1264,6 +1269,29 @@
                         p {
                             text-decoration: underline;
                         }
+                    }
+                }
+            }
+            .awards-wrapper {
+                &-1 {
+                    grid-template-columns: 1fr;
+                }
+                &-2 {
+                    grid-template-columns: repeat(2, 1fr);
+                    @include respond(tab-port) {
+                        grid-template-columns: 1fr;
+                        width: 100%;
+                    }
+                }
+                &-3 {
+                    grid-template-columns: repeat(3, 1fr);
+                    @include respond(tab-land) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                
+                    @include respond(tab-port) {
+                        grid-template-columns: 1fr;
+                        width: 100%;
                     }
                 }
             }

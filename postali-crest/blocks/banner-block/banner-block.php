@@ -35,8 +35,9 @@
                     <?php if( $banner_hp_mobile_img ) echo wp_get_attachment_image( $banner_hp_mobile_img['ID'], 'full', false, array('class' => 'mobile-hp-image') ); ?>
                     <div class="cta-wrapper">
                         <p><?php echo $banner_intro_copy; ?></p>
+                        <a href="tel:<?php the_field('phone_number', 'options'); ?>" class="btn"><span><?php the_field('phone_number', 'options'); ?></span></a>
                         <?php if( $banner_cta_link ) : ?>
-                            <a href="<?php echo $banner_cta_link['url']; ?>" class="btn" target="<?php echo $banner_cta_link['target']; ?>"><span><?php echo $banner_cta_link['title']; ?></span></a>
+                            <a href="<?php echo $banner_cta_link['url']; ?>" target="<?php echo $banner_cta_link['target']; ?>"><span><?php echo $banner_cta_link['title']; ?></span></a>
                         <?php endif; ?>
                     </div>
                 </div>

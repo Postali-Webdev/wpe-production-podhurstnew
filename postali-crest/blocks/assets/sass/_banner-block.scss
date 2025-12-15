@@ -52,6 +52,24 @@
                     @include respond(tab-land) {
                         padding: 80px 0 60px 0;
                     }
+                    .cta-wrapper {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                        -moz-column-gap: 30px;
+                        column-gap: 30px;
+                        row-gap: 15px;
+                        padding-bottom: 130px;
+
+                        @include respond(desktop) {
+                            padding-bottom: 150px;
+                        }
+
+                        @include respond(tab-land) {
+                            padding-bottom: 10px;
+                        }
+                    }
                     .mobile-hp-image {
                         display: none;
                         @include respond(phone) {

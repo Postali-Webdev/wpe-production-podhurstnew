@@ -127,81 +127,43 @@ get_header(); ?>
                                 </ul>
                             <?php endif; ?>
                         </div>
-
-
-
-
                     </div>
                 </div>
                 <?php endif; ?>
                 <div class="content-wrapper">
-                    <h3>Notable Achievements</h3>
-                    <img src="/wp-content/uploads/2025/07/separators.svg" alt="line separator icon" class="case-icon" />
-                    <div class="spacer-30"></div>
-                    <?php if( $notable_achievements ) echo $notable_achievements; ?>
-                    <div class="spacer-15"></div>
+                    <?php if( $notable_achievements ) : ?>
+                        <h3>Notable Achievements</h3>
+                        <img src="/wp-content/uploads/2025/07/separators.svg" alt="line separator icon" class="case-icon" />
+                        <div class="spacer-30"></div>
+                        <?php echo $notable_achievements; ?>
+                    <?php endif; ?>
+                    <?php if( $notable_achievements && $extra_copy )  : ?>
+                        <div class="spacer-15"></div>
+                    <?php endif; ?>
                     <?php if( $extra_copy ) echo $extra_copy; ?>
                 </div>
-                <?php if( have_rows('honors_awards') ) : 
-                    $count = 0;
-                    $max_visible = 8;
-                    $total = count(get_field('honors_awards'));
-                    ?>
-                    <div class="spacer-30"></div>
-                    <h3>Honors & Awards</h3>
-                    <div class="awards-wrapper">
-                        <?php
-                        $award_index = 0;
-                        while( have_rows('honors_awards') ) :
-                            the_row();
-                            $logo = get_sub_field('logo');
-                            $copy = get_sub_field('copy');
-                            $link_url = get_sub_field('link_url');
-                            $award_index++;
-                            if ($award_index > $max_visible) {
-                                // Skip rendering here, will render in hidden-awards below
-                                continue;
-                            }
-                            ?>
-                            <div class="award-block <?php echo !$link_url ? 'no-link' : ''; ?>">
-                                <?php if( $link_url ) : ?>
-                                <a href="<?php echo $link_url; ?>" target="_blank">
-                                <?php endif; ?>
-                                <?php if( $logo ) : ?>
-                                    <div class="award-logo">
-                                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
-                                    </div>
-                                <?php endif; ?>
-                                <?php if( $copy ) : ?>
-                                    <div class="award-copy">
-                                        <p><?php echo $copy; ?></p>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if( $link_url ) : ?>
-                                </a>         
-                                <?php endif; ?>
-                            </div>
-                            <?php
-                        endwhile;
+                <div class="awards-outer-wrapper">
+                    <?php if( have_rows('honors_awards') ) : 
+                        $count = 0;
+                        $max_visible = 8;
+                        $total = count(get_field('honors_awards'));
                         ?>
-                    </div>
-                    <?php
-                    // Render hidden awards as sibling
-                    if ($total > $max_visible) :
-                        $award_index = 0;
-                        reset_rows(); // Reset the have_rows() loop
-                        ?>
-                        <div class="hidden-awards">
+                        <div class="spacer-30"></div>
+                        
+                        <h3>Honors & Awards</h3>
+                        <div class="awards-wrapper awards-wrapper-<?php echo $total; ?>">
                             <?php
+                            $award_index = 0;
                             while( have_rows('honors_awards') ) :
                                 the_row();
-                                $award_index++;
-                                if ($award_index <= $max_visible) {
-                                    continue;
-                                }
                                 $logo = get_sub_field('logo');
                                 $copy = get_sub_field('copy');
                                 $link_url = get_sub_field('link_url');
+                                $award_index++;
+                                if ($award_index > $max_visible) {
+                                    // Skip rendering here, will render in hidden-awards below
+                                    continue;
+                                }
                                 ?>
                                 <div class="award-block <?php echo !$link_url ? 'no-link' : ''; ?>">
                                     <?php if( $link_url ) : ?>
@@ -225,9 +187,50 @@ get_header(); ?>
                             endwhile;
                             ?>
                         </div>
-                        <div class="btn view-all-awards"><span>View All Honors & Awards</span></div>
+                        <?php
+                        // Render hidden awards as sibling
+                        if ($total > $max_visible) :
+                            $award_index = 0;
+                            reset_rows(); // Reset the have_rows() loop
+                            ?>
+                            <div class="hidden-awards">
+                                <?php
+                                while( have_rows('honors_awards') ) :
+                                    the_row();
+                                    $award_index++;
+                                    if ($award_index <= $max_visible) {
+                                        continue;
+                                    }
+                                    $logo = get_sub_field('logo');
+                                    $copy = get_sub_field('copy');
+                                    $link_url = get_sub_field('link_url');
+                                    ?>
+                                    <div class="award-block <?php echo !$link_url ? 'no-link' : ''; ?>">
+                                        <?php if( $link_url ) : ?>
+                                        <a href="<?php echo $link_url; ?>" target="_blank">
+                                        <?php endif; ?>
+                                        <?php if( $logo ) : ?>
+                                            <div class="award-logo">
+                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if( $copy ) : ?>
+                                            <div class="award-copy">
+                                                <p><?php echo $copy; ?></p>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if( $link_url ) : ?>
+                                        </a>         
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php
+                                endwhile;
+                                ?>
+                            </div>
+                            <div class="btn view-all-awards"><span>View All Honors & Awards</span></div>
+                        <?php endif; ?>
                     <?php endif; ?>
-                <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>

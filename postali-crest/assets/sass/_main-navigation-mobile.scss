@@ -168,6 +168,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            order: 0;
                             &:after {
                                 left: 15px !important;
                             }
@@ -177,8 +178,12 @@
                             }
                         }
                         li {
+                            order: inherit;
                             a {
                                 font-size: 1.6rem;
+                            }
+                            @for $i from 1 through 6 {
+                                order: $i;
                             }
                         }
                         li:not(.nav-btn) {
