@@ -742,6 +742,7 @@
             }
             @include respond(phone) {
                 padding-bottom: 30px;
+                margin-top: 220px !important;
             }            
             h1 {
                 font-size: 4rem;
@@ -838,10 +839,16 @@
         }
     }
 
-    .wp-block-group.content-wrapper .wp-block-group__inner-container {
-        width: 75% !important;
-        @include respond(tab-land) {
-            width: 100% !important;
+    .wp-block-group.content-wrapper {
+        img {
+            max-width: 100%;
+        }
+        .wp-block-group__inner-container {
+            width: 75% !important;
+    
+            @include respond(tab-land) {
+                width: 100% !important;
+            }
         }
     }
 

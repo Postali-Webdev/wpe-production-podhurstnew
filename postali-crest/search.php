@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="column-50">
-            <img src='/wp-content/uploads/2025/08/smiling-people-working.jpg' class='banner-img'/>
+            <img src='/wp-content/uploads/2025/11/podhurst-orseck-office-frontdesk.jpg' class='banner-img'/>
         </div>
     </div>
 </section>
