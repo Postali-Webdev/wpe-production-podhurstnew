@@ -42,7 +42,7 @@
 			script.onload = () => {
 				dataLayer.push({ event: 'gtm.js', 'gtm.start': new Date().getTime(), 'gtm.uniqueEventId': 0 });
 			};
-			script.src = 'https://www.googletagmanager.com/gtm.js?id=YOUR-GTM-ID-HERE';
+			script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N34NJN';
 			document.head.appendChild(script);
 		}
 	</script>
