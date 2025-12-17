@@ -24,6 +24,10 @@
 
 ?>
 
+<?php if( $banner_background_image ) : ?>
+    <link rel="preload" fetchpriority="high" as="image" href="<?php echo $banner_background_image; ?>"/>
+<?php endif; ?>
+
 <?php if( $banner_block_layout == 'homepage') { ?>
 
     <section class="banner-block" id="homepage-banner">
