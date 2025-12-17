@@ -43,8 +43,8 @@ function postali_parent_scripts() {
     wp_enqueue_script('parent-scripts');
 
     // Add project specific icomoon library here
-    wp_register_style( 'icomoon', 'https://cdn.icomoon.io/152819/Podhurst/style.css?629y9l', array() );
-    wp_enqueue_style('icomoon');
+    // wp_register_style( 'icomoon', 'https://cdn.icomoon.io/152819/Podhurst/style.css?629y9l', array() );
+    // wp_enqueue_style('icomoon');
 
     // Fonts
     wp_register_style( 'google-font-playfair', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap' );

@@ -41,10 +41,13 @@ $yellow: #EB9915;
 $link-transition-speed: .15s;
 $trans: 0.2s linear;
 
-// @font-face {
-//     font-family: "Icomoon";
-//     src: url('/wp-content/themes/postali-crest/assets/fonts/icomoon/crest-block-icomoon.woff2') format('woff2'),
-// }
+@font-face {
+    font-family: "Icomoon";
+    src: url('/wp-content/themes/postali-crest/assets/fonts/icomoon/icomoon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 // Typography
 $sans: 'Roboto', sans-serif;
