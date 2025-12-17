@@ -29,7 +29,7 @@
 <?php endif; ?>
 
 <?php if( $banner_hp_mobile_img ) : ?>
-    <link rel="preload" fetchpriority="high" as="image" href="<?php echo $banner_hp_mobile_img; ?>"/>
+    <link rel="preload" fetchpriority="high" as="image" href="<?php echo $banner_hp_mobile_img['url']; ?>"/>
 <?php endif; ?>
 
 <?php if( $banner_block_layout == 'homepage') { ?>
