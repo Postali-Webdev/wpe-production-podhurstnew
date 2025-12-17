@@ -9,45 +9,17 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 	<link rel="preload" as="font" href="/wp-content/themes/postali-crest/assets/fonts/icomoon/icomoon.woff2"/>
-	
+	<link href="https://www.googletagmanager.com/gtag/js?id=GTM-N34NJN" rel="preload" as="script">
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+
+
 	<!-- Google Tag Manager -->
-	<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-N34NJN');</script> -->
+	})(window,document,'script','dataLayer','GTM-N34NJN');</script>
 	<!-- End Google Tag Manager -->
-
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			/** init gtm after 3500 seconds - this could be adjusted */
-			setTimeout(initGTM, 100);
-			});
-			document.addEventListener('scroll', initGTMOnEvent);
-			document.addEventListener('mousemove', initGTMOnEvent);
-			document.addEventListener('touchstart', initGTMOnEvent);
-			function initGTMOnEvent(event) {
-			initGTM();
-			event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
-			}
-			function initGTM() {
-			if (window.gtmDidInit) {
-				return false;
-			}
-			window.gtmDidInit = true; // flag to ensure script does not get added to DOM more than once.
-			const script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.async = true;
-			// ensure PageViews is always tracked (on script load)
-			script.onload = () => {
-				dataLayer.push({ event: 'gtm.js', 'gtm.start': new Date().getTime(), 'gtm.uniqueEventId': 0 });
-			};
-			script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N34NJN';
-			document.head.appendChild(script);
-		}
-	</script>
-
-
 
 	<!-- Add JSON Schema here -->
     <?php 
