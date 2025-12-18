@@ -68,5 +68,14 @@
 <!-- callrail tracking code -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/876919637/34944a6f1cbe00606c23/12/swap.js"></script> 
 
+<!-- clarity script -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ukiue250lc");
+</script>
+
 </body>
 </html>

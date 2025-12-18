@@ -105,7 +105,7 @@ get_header(); ?>
                         <div class="column-full">    
                     <?php endif; ?>
                             <?php if( $education ) : ?>
-                                <h4>Education & Early Career</h4>
+                                <h4><?php the_field('education_section_title'); ?></h4>
                                 <ul>
                                 <?php foreach( $education as $edu ) : ?>
                                     <li><strong><?php echo $edu['title']; ?></strong> - <?php echo $edu['details']; ?></li>
@@ -119,7 +119,7 @@ get_header(); ?>
                         <div class="column-full">
                     <?php endif; ?>
                             <?php if( $previous_jobs ) : ?>
-                                <h4>Early Roles</h4>
+                                <h4><?php the_field('roles_section_title'); ?></h4>
                                 <ul>
                                 <?php foreach( $previous_jobs as $job ) : ?>
                                     <li><strong><?php echo $job['title']; ?></strong> - <?php echo $job['details']; ?></li>
