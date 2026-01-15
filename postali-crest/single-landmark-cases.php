@@ -54,7 +54,7 @@ if( have_posts() ) :
                                     <div class="row row-2">
                                         <h3><?php echo get_the_title($post->ID); ?></h3>
                                         <img src="/wp-content/uploads/2025/07/separators.svg" alt="line separator icon" class="case-icon" />
-                                        <?php echo get_the_content($post->ID); ?>
+                                        <?php echo wpautop(get_the_content($post->ID)); ?>
                                     </div>
                                 </div>
                             </div>
