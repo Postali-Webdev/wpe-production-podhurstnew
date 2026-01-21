@@ -108,7 +108,7 @@ get_header(); ?>
                                 <h4><?php the_field('education_section_title'); ?></h4>
                                 <ul>
                                 <?php foreach( $education as $edu ) : ?>
-                                    <li><strong><?php echo $edu['title']; ?></strong> - <?php echo $edu['details']; ?></li>
+                                    <li><strong><?php echo $edu['title']; ?></strong><?php if( $edu['details'] ) { echo ' - '; } ?><?php echo $edu['details']; ?></li>
                                 <?php endforeach; ?>
                                 </ul>
                             <?php endif; ?>
