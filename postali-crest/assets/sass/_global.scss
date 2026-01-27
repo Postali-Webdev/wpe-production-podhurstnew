@@ -618,6 +618,9 @@ article {
         column-gap: 20px;
         .gfield {
             width: calc(50% - 10px);
+            @include respond(phone) {
+                width: 100%;
+            }
             input {
                 width: 100%;
                 box-sizing: border-box;
