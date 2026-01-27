@@ -612,6 +612,36 @@ article {
             color: $white !important;
         }
     }
+    #gform_fields_1 {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        .gfield {
+            width: calc(50% - 10px);
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 14px 25px !important;
+                margin-top: 10px;
+            }
+            &.gfield--type-textarea {
+                width: 100%;
+            
+                textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 14px 25px !important;
+                    margin-top: 10px;
+                }
+            }
+            &.gfield--type-captcha {
+                label {
+                    display: none !important;
+                }
+            }
+        }
+        
+    }
     label, span.gfield_required {
         color: $white !important;
         font-family: $sans !important;
@@ -621,6 +651,13 @@ article {
     }
     input, textarea {
         border-radius: 0px !important;
+    }
+    input[type="submit"] {
+        color: $white !important;
+    }
+    h2.gform_submission_error {
+        font-size: 18px !important;
+        line-height: 150% !important;
     }
 }
 

@@ -271,6 +271,12 @@
 }
 
 .wp-block-columns {
+    &.is-layout-flex {
+        display: flex;
+        @include respond(tab-port) {
+            display: block;
+        }
+    }
     &.justify-space-between {
         justify-content: space-between;
     }
@@ -372,5 +378,14 @@
                 text-decoration: none;
             }
         }
+    }
+}
+
+.wp-block-image {
+    img {
+        box-sizing: border-box;
+        height: auto;
+        max-width: 100%;
+        vertical-align: bottom;
     }
 }
