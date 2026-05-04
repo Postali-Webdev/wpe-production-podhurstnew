@@ -23,6 +23,7 @@ if (!function_exists('write_log')) {
 require_once dirname( __FILE__ ) . '/includes/landmark-cases-cpt.php'; // Custom Post Type Case Results
 require_once dirname( __FILE__ ) . '/includes/testimonials-cpt.php'; // Custom Post Type Testimonials
 require_once dirname( __FILE__ ) . '/includes/attorneys-cpt.php'; // Custom Post Type Attorneys
+require_once dirname( __FILE__ ) . '/includes/careers-cpt.php'; // Custom Post Type Careers
 require_once dirname( __FILE__ ) . '/includes/demo-layouts-cpt.php'; // Custom Post Type Demo Layouts
 
 
