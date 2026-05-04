@@ -687,12 +687,15 @@
         .column-33 {
             .banner-img {
                 img {
-                    object-position: 0 -55px !important;
+                    -o-object-position: 0 -55px !important;
+                       object-position: 0 -55px !important;
                     @include respond(tab-land) {
-                        object-position: 0 -200px !important;
+                        -o-object-position: 0 -200px !important;
+                           object-position: 0 -200px !important;
                     }
                     @include respond(phone) {
-                        object-position: center -200px !important;
+                        -o-object-position: center -200px !important;
+                           object-position: center -200px !important;
                     }
                 }
             }
@@ -890,7 +893,8 @@
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+                    -o-object-fit: cover;
+                       object-fit: cover;
                 }
             }
             .content {
@@ -1306,7 +1310,71 @@
     }
 }
 
-.page-template-our-team-page, .page-template-testimonials-page {
+.page-template-careers-page {
+    p.gform_required_legend {
+        font-size: 15px !important;
+        color: $white !important;
+    }
+    .gform_description {
+        display: none !important;        
+    }
+    .gform_wrapper {
+        padding: 20px;
+        background: $blk;
+        .gfield_label {
+            font-family: $sans;
+            color: $white;
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: $white;
+            text-decoration: none;
+            color: $blk !important;
+            border: 1px solid $blk;
+            transition: $trans;
+            font-family: $sans;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $blk;
+                color: $yellow !important;
+                border: 1px solid $white;
+            }
+        }
+    }
+
+    #careers {
+        width: 100%;
+
+        #gform_2 {
+            background: #2A2E40;
+
+            #input_2_5 { 
+                height: 50px;
+                display: flex;
+                align-items: center;
+                font-family: $sans;
+            }
+
+            span#gfield_upload_rules_2_6 {
+                color:white;
+                font-family: $sans;
+            }
+
+            #gform_submit_button_2 {
+                color: white !important;
+            }
+        }
+    }
+}
+
+.page-template-our-team-page,
+.page-template-testimonials-page,
+.page-template-careers-page {
     #banner-full-bg {
         padding: 180px 0 250px 0;
         @include respond(tab-land) {

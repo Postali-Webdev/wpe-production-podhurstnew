@@ -696,3 +696,41 @@ function postali_remove_customizer_additional_css_section( $wp_customize ) {
     }
 }
 add_action( 'customize_register', 'postali_remove_customizer_additional_css_section', 20 );
+
+
+add_filter( 'gform_pre_render_2', 'populate_posts_custom' );
+add_filter( 'gform_pre_validation_2', 'populate_posts_custom' );
+add_filter( 'gform_pre_submission_filter_2', 'populate_posts_custom' );
+add_filter( 'gform_admin_pre_render_2', 'populate_posts_custom' );
+function populate_posts_custom( $form ) {
+ 
+    foreach ( $form['fields'] as $field ) {
+ 
+		//$field->type != 'select' || 
+		
+        if ( strpos( $field->cssClass, 'populate-posts' ) === false ) {
+            continue;
+        }
+ 
+        $posts = get_posts( array(
+            'post_type'   => 'careers', // Change this
+            'numberposts' => -1,
+            'post_status' => 'publish',
+            'orderby'     => 'title',
+            'order'       => 'ASC',
+        ) );
+ 
+        $choices = array();
+ 
+        foreach ( $posts as $post ) {
+            $choices[] = array( 'text' => $post->post_title, 'value' => $post->post_title );
+        }
+ 
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $field->placeholder = 'General Interest';
+        $field->choices = $choices;
+ 
+    }
+ 
+    return $form;
+}
