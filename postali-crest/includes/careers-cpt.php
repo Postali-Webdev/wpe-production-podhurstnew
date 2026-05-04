@@ -28,7 +28,7 @@ function create_custom_post_type_careers() {
 	register_post_type( 'Careers', array(
 		'labels' => $labels,
         'menu_icon' => 'dashicons-businessperson',
-		'has_archive' => true,
+		'has_archive' => false,
  		'public' => true,
 		'supports' => array( 'title', 'editor', 'excerpt'),	
 		'exclude_from_search' => false,
