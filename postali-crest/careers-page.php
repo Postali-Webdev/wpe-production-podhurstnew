@@ -34,45 +34,68 @@ $block_content = do_blocks( '
 
 get_header(); ?>
 
-<section class="banner-block" id="banner-full-bg">
-    <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?> 
-	<?php if($banner_img) {
-		echo wp_get_attachment_image($banner_img['ID'], 'full', false, array('class' => 'banner-bg'));
-	} ?>
-    <div class="container">
-		<div class="columns">
-			<div class="column-50 block">
-				<div class="container">
-					<p class="paragraph-subtitle"><?php echo $subtitle; ?></p>
-					<h1 class="large-title"><?php echo $title; ?></h1>
-					<p><?php the_field('copy'); ?></p>
-					<?php if (get_field('cta_button')): $cta_btn = get_field('cta_button'); ?>
-						<a href="<?php echo $cta_btn['url']; ?>" class="btn"><span><?php echo $cta_btn['title']; ?></span></a>
-					<?php endif; ?>
 
-				</div>
-			</div>
-			<div class="column-50">
+<div class="body-container">
+    <section class="banner-block" id="banner-standard-split">
+        <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?> 
+        <div class="columns">
+            <div class="column-50 block">
+                <div class="container">
+                    <h1>Careers</h1>    
+                    <p class="large-title">Join Our Team</p>
+                    <a href="/contact-us/" target="" class="btn"><span>Contact Us</span></a>
+                </div>
+            </div>
+            <div class="column-50">
+                <img src='/wp-content/uploads/2025/11/podhurst-orseck-office-frontdesk.jpg.webp' class='banner-img'/>
+            </div>
+        </div>
+    </section>
 
-			</div>
-		</div>
-	</div>
-</section>
-<span id="main-content"></span>
-<section class="body-wrapper body-wrapper-1 wp-block-group clip-top-slant-hl dark-blue-bg">
-    <div class="container">
-		<div class="columns">
-			<div class="column-66 center">
+    <div class="wp-block-group">
+        <div class="wp-block-group">
+            <div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+                <div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+                    <div class="wp-block-group light-grey-bg clip-top-slant-lh"><div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+                        <div class="wp-block-columns alignwide justify-space-between is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+                            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%">
+                                <h2 class="wp-block-heading">Current openings</h2>
+                                <p class=" paragraph-subtitle">explore our current openings or submit your info using our general application below.</p>
+                                <a href="/careers-apply?job=General Interest" class="btn" target=""><span>General Application</span></a>
+                            </div>
 
-				<div id="careers">
-						
-                    <?php echo $block_content; ?>
+                            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%">
+                                
+                            <?php if( $careers->have_posts() ): ?>
+                            <?php while( $careers->have_posts() ): $careers->the_post(); ?>   
+                                <div class="career">
+                                    <a href="<?php the_permalink(); ?>?job=<?php the_title(); ?>" class="post-title"><h3><?php the_title(); ?> </h3></a>
+                                    <?php the_excerpt(); ?>
+                                </div>
+                                <?php wp_reset_postdata(); ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
 
-				</div>
-			</div>
-		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wp-block-group dark-blue-bg"><div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+                    <div class="wp-block-columns alignwide justify-space-between is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+                        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%">
+                                <h2 class="wp-block-heading heading-with-icon">About Our Firm</h2>
+                            </div>
+                            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%">
+                                <p class=" paragraph-subtitle">Renowned for landmark victories and trusted nationwide</p>
+                                <p>Podhurst Orseck is a premier litigation firm with decades of experience in aviation law, catastrophic personal injury, class actions, complex commercial litigation, and appeals. Based in South Florida and offering boutique client attention, our precision, integrity, and record-setting results set us apart.</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
 
+</div>
 
 <?php get_footer(); ?>
