@@ -74,7 +74,7 @@ $banner_image = get_the_post_thumbnail();
                             <div class="contact-block form">
                                 <div class="columns">
                                     <div class="column-full center">
-                                        <?php echo do_shortcode('[gravityform id="2" title="false"]'); ?>
+                                        <?php echo do_shortcode('[gravityform id="4" title="false"]'); ?>
                                     </div>
                                 </div>
                             </div>
