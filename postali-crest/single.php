@@ -149,7 +149,6 @@ if( !$banner_image ) {
                                 <p class="author-name"><?php echo esc_html( $name ); ?></p>
                                 <p class="author-title"><?php echo $attorney_title; ?></p>
                                 <?php echo $excerpt; ?>
-                                <p class="author-experience"><strong>Experience:</strong> <?php echo esc_html( $experience_years ); ?>+ years</p>
                                 <?php if( $practice_areas ) : $count = 0; $pa_length = count( $practice_areas ); ?>
                                 <p class="author-practice-areas"><strong>Practice Areas:</strong> 
                                     <?php foreach( $practice_areas as $pa ) : ?>
